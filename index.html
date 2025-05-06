@@ -3,58 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Paul | Frontend developer</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
     <header>
-        <h1>Hello! My name is Paul</h1>
-        <nav>
-            <a href="#about">About me</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact me</a>
-        </nav>
+        <div class="container">
+            <div class="logo">
+                <a href="#home">Paul<span class="accent">Dev</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="about">
-        <h2>About me</h2>
-        <div class="about-container">
-            <img src="assets/images/profile.png" alt="My profile picture." class="profile-pic"/>
-            <div class="about-text">
-                <p>My name is Paul. I'm learning how to develop a website by using HTML, CSS and JavaScript.</p>
-                <p>I'm interested in Frontend development and UX/ UI design</p>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Building digital <span class="accent">experiences</span> that matter</h1>
+                <p>Frontend developer specializing in clean, functional web solutions</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn primary">View Projects</a>
+                    <a href="#contact" class="btn secondary">Contact Me</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="assets/images/parking.jpg" alt="1st Project"/>
-                <h3>1st Project</h3>
-                <p>Parking reservation app by using HTML, CSS and JavaScript</p>
-                <a href="#" class="btn-view">More...</a>
+    <<section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p>Get to know who I am and what I do</p>
             </div>
-
-            <div class="project-card">
-                <img src="assets/images/todo.jpg" alt="2nd Project"/>
-                <h3>2nd Project</h3>
-                <p>To-Do List responsive app.</p>
-                <a href="#" class="btn-view">More...</a>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="assets/images/profile.png" alt="Paul's profile photo">
+                </div>
+                <div class="about-text">
+                    <p>Hello! I'm Paul, a frontend developer passionate about creating clean, user-friendly interfaces.</p>
+                    <p>I specialize in HTML, CSS, and JavaScript, focusing on building responsive websites that provide exceptional user experiences.</p>
+                    <p>Currently, I'm learning web development and expanding my skills through hands-on projects and continuous learning. I'm particularly interested in creating intuitive designs that solve real problems.</p>
+                    <p>When I'm not coding, I enjoy exploring new technologies and design trends to continuously improve my skills.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact me</h2>
-        <p>Email: Paul@gmail.com</p>
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Skills</h2>
+                <p>Technologies I'm learning</p>
+            </div>
+            <div class="skills-content">
+                <div class="skill-card">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Responsive Design</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools</h3>
+                    <div class="skill-tags">
+                        <span class="tag">VS Code</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">GitHub</span>
+                        <span class="tag">Chrome DevTools</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Learning</h3>
+                    <div class="skill-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Tailwind CSS</span>
+                        <span class="tag">API Integration</span>
+                        <span class="tag">UI/UX Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>© 2025 Paul's Portfolio</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
