@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paul | Frontend developer</title>
     <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -36,7 +37,7 @@
         </div>
     </section>
 
-    <<section id="about" class="about">
+    <section id="about" class="about">
         <div class="container">
             <div class="section-header">
                 <h2>About Me</h2>
@@ -93,6 +94,135 @@
             </div>
         </div>
     </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>My Projects</h2>
+                <p>Recent work I've built</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/parking.jpg" alt="Parking Reservation App">
+                    </div>
+                    <div class="project-content">
+                        <h3>Parking Reservation App</h3>
+                        <p>A responsive web application for booking parking spaces with real-time availability updates.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/todo.jpg" alt="To-Do List App">
+                    </div>
+                    <div class="project-content">
+                        <h3>To-Do List App</h3>
+                        <p>A clean, intuitive to-do list application with task filtering and local storage functionality.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Let's discuss your thought</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <span class="material-icons">email</span>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>paul@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <span class="material-icons">location_on</span>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Calgary, AB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <div class="input-with-icon">
+                                <input type="text" id="name" placeholder="Your name">
+                                <span class="material-icons input-icon">person</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <div class="input-with-icon">
+                                <input type="email" id="email" placeholder="Your email">
+                                <span class="material-icons input-icon">email</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" placeholder="Your message"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn primary btn-submit">
+                            <span>Send Message</span>
+                            <span class="material-icons">send</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#home">Paul<span class="accent">Dev</span></a>
+                    <p>Frontend developer specializing in clean, functional web solutions</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PaulDev. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
