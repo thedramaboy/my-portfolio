@@ -21,6 +21,9 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <button class="dark-mode-toggle" aria-label="dark-mode-toggle">
+                <span class="material-icons">dark_mode</span>
+            </button>
         </div>
     </header>
 
@@ -100,6 +103,12 @@
             <div class="section-header">
                 <h2>My Projects</h2>
                 <p>Recent work I've built</p>
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="HTML">HTML</button>
+                    <button class="filter-btn" data-filter="CSS">CSS</button>
+                    <button class="filter-btn" data-filter="JavaScript">JavaScript</button>
+                </div>
             </div>
             <div class="projects-grid">
                 <div class="project-card">
@@ -224,5 +233,10 @@
         </div>
     </footer>
 
+    <button id="back-to-top" class="back-to-top" aria-label="back-to-top">
+        <span class="material-icons">arrow_upward</span>
+    </button>
+
+    <script src="script.js"></script>
 </body>
 </html>
