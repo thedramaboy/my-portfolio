@@ -289,6 +289,11 @@ header .container {
     z-index: -2;
 }
 
+#hero-bg {
+  background: radial-gradient(circle at center, rgba(168,85,247,0.2), transparent 80%);
+  transition: background 0.2s ease;
+}
+
 .gradient-overlay {
     position: absolute;
     inset: 0;
@@ -407,6 +412,24 @@ header .container {
     gap: 0.5rem;
     transition: all var(--transition-fast);
 }
+
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.25), transparent 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10;
+  mix-blend-mode: lighten;
+  filter: blur(30px);
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
+  transition: transform 0.15s ease-out;
+}
+
 
 /* Scroll indicator */
 .scroll-indicator {
@@ -1010,12 +1033,6 @@ footer::before {
     color: var(--text-light);
     display: inline-block;
     margin-bottom: 1rem;
-}
-
-.footer-logo .accent {
-    background: var(--bg-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .footer-logo p {
