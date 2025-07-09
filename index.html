@@ -3,27 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul | Frontend developer</title>
+    <title>Paul Se.</title>
     <link rel="stylesheet" href="style.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
                 <a href="#home">Paul<span class="accent">Dev</span></a>
             </div>
+
+            <!-- Desktop navigation -->
             <nav>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Dark mode toggle button -->
             <button class="dark-mode-toggle" aria-label="dark-mode-toggle">
                 <span class="material-icons">dark_mode</span>
             </button>
+
+            <!-- Hamburger menu button -->
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- Mobile navigation -->
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link mobile-nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link mobile-nav-link">About</a></li>
+                    <li><a href="#portfolio" class="nav-link mobile-nav-link">Portfolio</a></li>
+                    <li><a href="#testimonials" class="nav-link mobile-nav-link">Testimonials</a></li>
+                    <li><a href="#contact" class="nav-link mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
         </div>
     </header>
 
