@@ -82,6 +82,7 @@
         </div>
     </section>
 
+    <!-- About section -->
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
@@ -102,6 +103,7 @@
         </div>
     </section>
 
+    <!-- Skills section -->
     <section id="skills" class="skills">
         <div class="container">
             <div class="section-header">
@@ -110,6 +112,9 @@
             </div>
             <div class="skills-content">
                 <div class="skill-card">
+                    <div class="skill-icon">
+                        <span class="material-icons">code</span>
+                    </div>
                     <h3>Frontend</h3>
                     <div class="skill-tags">
                         <span class="tag">HTML5</span>
@@ -119,6 +124,9 @@
                     </div>
                 </div>
                 <div class="skill-card">
+                    <div class="skill-icon">
+                        <span class="material-icons">build</span>
+                    </div>
                     <h3>Tools</h3>
                     <div class="skill-tags">
                         <span class="tag">VS Code</span>
@@ -128,6 +136,9 @@
                     </div>
                 </div>
                 <div class="skill-card">
+                    <div class="skill-icon">
+                        <span class="material-icons">school</span>
+                    </div>
                     <h3>Learning</h3>
                     <div class="skill-tags">
                         <span class="tag">React</span>
@@ -140,10 +151,11 @@
         </div>
     </section>
 
-    <section id="projects" class="projects">
+    <!-- Portfolio section -->
+    <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="section-header">
-                <h2>My Projects</h2>
+                <h2>Portfolio</h2>
                 <p>Recent work I've built</p>
                 <div class="project-filters">
                     <button class="filter-btn active" data-filter="all">All</button>
@@ -152,39 +164,49 @@
                     <button class="filter-btn" data-filter="JavaScript">JavaScript</button>
                 </div>
             </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
+            <div class="portfolio-grid">
+                <div class="portfolio-card" data-category="HTML CSS JavaScript">
+                    <div class="portfolio-image">
                         <img src="assets/images/parking.jpg" alt="Parking Reservation App">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link">
+                                <span class="material-icons">visibility</span>
+                            </a>
+                            <a href="#" class="portfolio-link">
+                                <span class="material-icons">code</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="project-content">
+                    <div class="portfolio-content">
                         <h3>Parking Reservation App</h3>
                         <p>A responsive web application for booking parking spaces with real-time availability updates.</p>
-                        <div class="project-tags">
+                        <div class="portfolio-tags">
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
                             <span class="tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-sm primary">View Project</a>
                         </div>
                     </div>
                 </div>
-    
-                <div class="project-card">
-                    <div class="project-image">
+
+                <div class="portfolio-card" data-category="HTML CSS JavaScript">
+                    <div class="portfolio-image">
                         <img src="assets/images/todo.jpg" alt="To-Do List App">
+                        <div class="portfolio-overlay">
+                            <a href="#" class="portfolio-link">
+                                <span class="material-icons">visibility</span>
+                            </a>
+                            <a href="#" class="portfolio-link">
+                                <span class="material-icons">code</span>
+                            </a>
+                        </div>
                     </div>
-                    <div class="project-content">
+                    <div class="portfolio-content">
                         <h3>To-Do List App</h3>
                         <p>A clean, intuitive to-do list application with task filtering and local storage functionality.</p>
-                        <div class="project-tags">
+                        <div class="portfolio-tags">
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
                             <span class="tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-sm primary">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -192,11 +214,68 @@
         </div>
     </section>
 
+    <!-- Testimonials section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Testimonials</h2>
+                <p>What people say about my work</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="quote-icon">
+                        <span class="material-icons">format_quote</span>
+                    </div>
+                    <p class="testimonial-text">"Paul is an exceptional developer who brings creativity and technical expertise to every project. His attention to detail and commitment to quality is outstanding."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60" alt="Client photo">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>CEO, TechStart</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <span class="material-icons">format_quote</span>
+                    </div>
+                    <p class="testimonial-text">"Working with Paul was a great experience. He delivered a beautiful, responsive website that exceeded our expectations. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60" alt="Client photo">
+                        <div>
+                            <h4>Mike Chen</h4>
+                            <p>Product Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">
+                        <span class="material-icons">format_quote</span>
+                    </div>
+                    <p class="testimonial-text">"Paul's frontend skills are impressive. He created a user-friendly interface that our customers love. Great communication throughout the project."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60" alt="Client photo">
+                        <div>
+                            <h4>Emily Davis</h4>
+                            <p>Marketing Director</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
                 <h2>Get In Touch</h2>
-                <p>Let's discuss your thought</p>
+                <p>Let's discuss your project</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
@@ -218,13 +297,22 @@
                             <p>Calgary, AB</p>
                         </div>
                     </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <span class="material-icons">schedule</span>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Working Hours</h3>
+                            <p>Mon - Fri, 9AM - 6PM</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="contact-form-container">
                     <form class="contact-form">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <div class="input-with-icon">
-                                <input type="text" id="name" placeholder="Your name">
+                                <input type="text" id="name" placeholder="Your name" required>
                                 <span class="material-icons input-icon">person</span>
                             </div>
                         </div>
@@ -232,14 +320,14 @@
                         <div class="form-group">
                             <label for="email">Email</label>
                             <div class="input-with-icon">
-                                <input type="email" id="email" placeholder="Your email">
+                                <input type="email" id="email" placeholder="Your email" required>
                                 <span class="material-icons input-icon">email</span>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" rows="5" placeholder="Your message"></textarea>
+                            <textarea id="message" rows="5" placeholder="Your message" required></textarea>
                         </div>
                         
                         <button type="submit" class="btn primary btn-submit">
@@ -252,19 +340,31 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
                     <a href="#home">Paul<span class="accent">Dev</span></a>
                     <p>Frontend developer specializing in clean, functional web solutions</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub">
+                            <span class="material-icons">code</span>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <span class="material-icons">business</span>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <span class="material-icons">tag</span>
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-links">
-                    <h3>Links</h3>
+                    <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
