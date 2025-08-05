@@ -1,7 +1,11 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { Button } from "./ui/button"
+import Link from "next/link"
+import { Github, Linkedin} from "lucide-react"
 import { motion } from "framer-motion"
+import { useEffect, useRef } from "react"
+
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -109,6 +113,20 @@ export default function Hero() {
         >
           Software developer
         </motion.p>
+        <div className="space-x-4 py-6">
+          <Link href="https://github.com/thedramaboy" target="_blank">
+            <Button variant="outline" size="icon" className="border border-black">
+              <Github className="h-4 w-4" />
+              <span className="sr-only">GitHub</span>
+            </Button>
+          </Link>
+          <Link href="https://www.linkedin.com/in/ntwsc/" target="_blank">
+            <Button variant="outline" size="icon" className="border border-black">
+              <Linkedin className="h-4 w-4" />
+              <span className="sr-only">LinkedIn</span>
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   )
