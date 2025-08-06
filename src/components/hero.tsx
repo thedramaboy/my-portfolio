@@ -2,19 +2,18 @@
 
 import { Button } from "./ui/button"
 import Link from "next/link"
-import { Github, Linkedin} from "lucide-react"
+import { Github, Linkedin } from "lucide-react"
 import { motion } from "framer-motion"
 import { useEffect, useRef } from "react"
-
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const GRAY_SHADES = [
-  "rgba(50, 50, 50, 0.5)",
-  "rgba(100, 100, 100, 0.5)",
-  "rgba(150,150,150,0.3)",
-  "rgba(30,30,30,0.7)",
-]
+    "rgba(50, 50, 50, 0.5)",
+    "rgba(100, 100, 100, 0.5)",
+    "rgba(150,150,150,0.3)",
+    "rgba(30,30,30,0.7)",
+  ]
 
   useEffect(() => {
     if (!canvasRef.current) return
@@ -47,22 +46,22 @@ export default function Hero() {
       }
 
       update() {
-            this.x += this.speedX
-            this.y += this.speedY
+        this.x += this.speedX
+        this.y += this.speedY
 
-            if (this.x > canvas.width) this.x = 0
-            if (this.x < 0) this.x = canvas.width
-            if (this.y > canvas.height) this.y = 0
-            if (this.y < 0) this.y = canvas.height
-        }
+        if (this.x > canvas.width) this.x = 0
+        if (this.x < 0) this.x = canvas.width
+        if (this.y > canvas.height) this.y = 0
+        if (this.y < 0) this.y = canvas.height
+      }
 
       draw() {
-        if (!ctx) return;
-            ctx.fillStyle = this.color;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
+        if (!ctx) return
+        ctx.fillStyle = this.color
+        ctx.beginPath()
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+        ctx.fill()
+      }
     }
 
     for (let i = 0; i < particleCount; i++) {
@@ -95,24 +94,38 @@ export default function Hero() {
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full bg-white" />
+      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full bg-background" />
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
         <motion.h1
-          className="mb-6 text-6xl font-semibold text-primary tracking-wider sm:text-7xl lg:text-8xl"
+          className="mb-4 text-6xl font-semibold text-primary tracking-wider sm:text-7xl lg:text-8xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-            Natthawat Se.
+          Natthawat Se.
         </motion.h1>
+
         <motion.p
-          className="max-w-[600px] tracking-widest text-lg text-primary sm:text-xl"
+          className="text-lg sm:text-xl text-primary tracking-widest"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Software developer
+          Software Developer
         </motion.p>
+
+        <motion.p
+          className="max-w-xl mt-6 text-muted-foreground text-base sm:text-lg leading-relaxed"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <span role="img" aria-label="waving hand" className="mr-2">👋</span>
+          I&apos;m Paul, a passionate software developer with experience in
+          building web applications using modern technologies like React, TypeScript,
+          and Tailwind CSS.
+        </motion.p>
+
         <div className="space-x-4 py-6">
           <Link href="https://github.com/thedramaboy" target="_blank">
             <Button variant="outline" size="icon" className="border border-black">
