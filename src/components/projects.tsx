@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const projects = [
   {
-    title: "Savage Nation",
+    title: "Go Apricot",
     description: "Digital Collectible",
     image: "/images/pic1.jpg",
   },
@@ -43,8 +43,8 @@ export default function Projects() {
 
                 {/* Liquid Glass Overlay */}
                 <div className="absolute bottom-4 left-4 right-4 p-4 bg-white/10 backdrop-blur-md rounded-lg flex justify-between items-center text-sm md:text-base">
-                  <span className="text-white">{project.title} / {project.description}</span>
-                  <span className="text-white text-xl">→</span>
+                  <span className="text-foreground">{project.title} / {project.description}</span>
+                  <span className="text-foreground text-xl">→</span>
                 </div>
               </div>
 

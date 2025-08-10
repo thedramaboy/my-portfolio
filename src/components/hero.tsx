@@ -121,7 +121,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <span role="img" aria-label="waving hand" className="mr-2">👋</span>
-          I&apos;m Paul, a passionate software developer with experience in
+          I&apos;m Alex, a passionate software developer with experience in
           building web applications using modern technologies like React, TypeScript,
           and Tailwind CSS.
         </motion.p>
