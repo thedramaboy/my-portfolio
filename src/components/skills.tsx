@@ -78,15 +78,22 @@ export default function Skills() {
         </div>
 
         {/* Right column */}
-        <div className="mx-auto max-w-[400px] grid grid-cols-5 gap-2">
+        <div className="mx-auto max-w-[400px] grid grid-cols-5 gap-5">
           {gridItems.map((item, i) => (
             <motion.div
               key={i}
               whileHover={{ scale: item ? 1.05 : 1 }}
               className={clsx(
-                "w-16 h-16 flex items-center justify-center text-sm font-medium rounded-md",
+                "w-[80px] h-[80px] flex items-center justify-center text-center text-xs font-medium rounded-md",
                 "border border-border bg-white/5 backdrop-blur-md transition-all",
-                item ? "text-primary" : "text-transparent"
+                item 
+                ? 
+                [
+                  "text-primary",
+                  "bg-primary/10",
+                  "ring-1 ring-primary/30"
+                ]
+                : "text-transparent"
               )}
             >
               {item || "."}
