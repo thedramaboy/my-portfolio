@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 export default function Contact() {
   return (
-    <section id="contact" className="min-h-screen px-6 py-20 bg-background text-foreground">
+    <section id="contact" className="px-6 py-20 bg-background text-foreground">
       <div className="max-w-xl mx-auto text-center">
         <motion.h2
           className="text-3xl font-bold mb-4"
@@ -14,7 +14,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Get In Touch
+          I would love to hear anything from you!
         </motion.h2>
         <motion.p
           className="mb-8 text-lg text-muted-foreground"
@@ -23,7 +23,7 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Have a question or want to work together? Drop me a message!
+          Here&apos;s is my drop box.
         </motion.p>
         <form
           className="space-y-4 text-left"
@@ -52,10 +52,12 @@ export default function Contact() {
             required
             className="w-full p-3 rounded-md border border-input bg-muted text-foreground"
           />
-          <Button type="submit" variant="default">
-            Send Message
-          </Button>
         </form>
+        <div className="flex justify-end items-end mt-6">
+          <Button type="submit" variant="default" size="lg">
+            Send message
+          </Button>
+        </div>
       </div>
     </section>
   )
