@@ -1,17 +1,19 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
 import clsx from "clsx"
+import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
 
-const FULL_STACK = ["Next.js", "Node.js", "Express", "TypeScript", "PostgreSQL"]
-const DESIGN_STACK = ["Tailwind", "Framer Motion", "Shadcn", "CSS Modules", "Figma"]
-const LEARNING_STACK = ["tRPC", "Prisma", "Zod", "GraphQL", "Docker"]
+const LANGUAGES_FRAMEWORKS = ["Python", "Flask", "C", "JavaScript", "TypeScript", "React", "Next.js", "Flutter", "Java"]
+const DATABASES = ["MySQL", "PostgreSQL", "MongoDB", "Firebase", "Supabase"]
+const TOOLS_DEVOPS = ["Git", "GitHub Actions", "Docker", "Linux", "VS Code"]
+const FAMILIAR_WITH = ["Azure", "Spring Boot", "JUnit"]
 
 const TABS = [
-  { label: "FULL STACK", data: FULL_STACK },
-  { label: "DESIGN STACK", data: DESIGN_STACK },
-  { label: "LEARNING STACK", data: LEARNING_STACK },
+  { label: "LANGUAGES & FRAMEWORKS", data: LANGUAGES_FRAMEWORKS },
+  { label: "DATABASES", data: DATABASES },
+  { label: "TOOLS & DEVOPS", data: TOOLS_DEVOPS },
+  { label: "FAMILIAR WITH", data: FAMILIAR_WITH },
 ]
 
 const GRID_SIZE = 25
@@ -21,7 +23,7 @@ export default function Skills() {
   const [gridItems, setGridItems] = useState<string[]>([])
 
   useEffect(() => {
-    setGridItems(fillGrid(FULL_STACK))
+    setGridItems(fillGrid(LANGUAGES_FRAMEWORKS))
   }, [])
 
   function handleTab(index: number) {
@@ -41,7 +43,7 @@ export default function Skills() {
             Skills
           </h2>
           <p className="text-muted-foreground max-w-md">
-            The tools and technologies I use to build efficient and user-friendly websites.
+            The technologies and tools I use to build robust applications and manage development workflows.
           </p>
           <div className="flex flex-wrap gap-2 relative">
             {TABS.map((tab, index) => (
@@ -49,7 +51,7 @@ export default function Skills() {
                 key={tab.label}
                 onClick={() => handleTab(index)}
                 className={clsx(
-                  "px-4 py-1 rounded-full border text-sm font-medium transition relative z-10",
+                  "px-3 py-1 rounded-full border text-xs font-medium transition relative z-10",
                   activeTab === index
                     ? "bg-primary text-primary-foreground"
                     : "bg-muted text-muted-foreground border-border hover:bg-accent hover:text-accent-foreground"
