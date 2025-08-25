@@ -9,7 +9,12 @@ export default function Header() {
         <a href="#projects" className="hover:underline">Projects</a>
         <a href="#contact" className="hover:underline">Contact</a>
       </nav>
-      <Button variant="secondary" className="text-primary">Resume</Button>
+
+      <Button variant="secondary" className="text-primary" asChild>
+        <a href="/resume/resume_natthawat_se.pdf" download>
+          Resume
+        </a>
+      </Button>
     </header>
   )
 }
