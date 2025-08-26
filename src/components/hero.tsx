@@ -95,51 +95,53 @@ export default function Hero() {
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full bg-background" />
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-        <motion.h1
+      <div className="relative z-10 flex h-full items-center">
+        <div className="max-w-6xl mx-auto px-6 w-full text-center flex flex-col items-center justify-center">
+          <motion.h1
           className="mb-4 text-6xl font-semibold text-primary tracking-wider sm:text-7xl lg:text-8xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-        >
-          Natthawat Se.
-        </motion.h1>
+          >
+            Natthawat Se.
+          </motion.h1>
 
-        <motion.p
-          className="text-lg sm:text-xl text-primary tracking-widest"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          Junior software developer
-        </motion.p>
+          <motion.p
+            className="text-lg sm:text-xl text-primary tracking-widest"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Junior software developer
+          </motion.p>
 
-        <motion.p
-          className="max-w-xl mt-6 text-muted-foreground text-base sm:text-lg leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <span role="img" aria-label="waving hand" className="mr-2">👋</span>
-          Hi! I&apos;m Paul, a recent graduate from SAIT in Software Development. 
-          I&apos;m still in the early stages of my career path<br/>
-          with a long way to go and so much to learn.<br/><br/> 
-          Currently working as a software developer intern at <a href="https://goapricot.ca/" className="underline">GoApricot</a>.
-        </motion.p>
+          <motion.p
+            className="max-w-xl mt-6 text-muted-foreground text-base sm:text-lg leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <span role="img" aria-label="waving hand" className="mr-2">👋</span>
+            Hi! I&apos;m Paul, a recent graduate from SAIT in Software Development. 
+            I&apos;m still in the early stages of my career path<br/>
+            with a long way to go and so much to learn.<br/><br/> 
+            Currently working as a software developer intern at <a href="https://goapricot.ca/" className="underline">GoApricot</a>.
+          </motion.p>
 
-        <div className="space-x-4 py-6">
-          <Link href="https://github.com/thedramaboy" target="_blank">
-            <Button variant="outline" size="icon" className="border border-black">
-              <Github className="h-4 w-4" />
-              <span className="sr-only">GitHub</span>
-            </Button>
-          </Link>
-          <Link href="https://www.linkedin.com/in/ntwsc/" target="_blank">
-            <Button variant="outline" size="icon" className="border border-black">
-              <Linkedin className="h-4 w-4" />
-              <span className="sr-only">LinkedIn</span>
-            </Button>
-          </Link>
+          <div className="space-x-4 py-6">
+            <Link href="https://github.com/thedramaboy" target="_blank">
+              <Button variant="outline" size="icon" className="border border-black">
+                <Github className="h-4 w-4" />
+                <span className="sr-only">GitHub</span>
+              </Button>
+            </Link>
+            <Link href="https://www.linkedin.com/in/ntwsc/" target="_blank">
+              <Button variant="outline" size="icon" className="border border-black">
+                <Linkedin className="h-4 w-4" />
+                <span className="sr-only">LinkedIn</span>
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

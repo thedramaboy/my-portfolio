@@ -4,16 +4,16 @@ import clsx from "clsx"
 import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 
-const LANGUAGES_FRAMEWORKS = ["Python", "Flask", "C", "JavaScript", "TypeScript", "React", "Next.js", "Flutter", "Java"]
+const LANGUAGES_FRAMEWORKS = ["Python (Flask)", "Django", "C", "C# .NET", "JavaScript", "TypeScript", "React", "Next.js", "Flutter", "Java"]
 const DATABASES = ["MySQL", "PostgreSQL", "MongoDB", "Firebase", "Supabase"]
-const TOOLS_DEVOPS = ["Git", "GitHub Actions", "Docker", "Linux", "VS Code"]
-const FAMILIAR_WITH = ["Azure", "Spring Boot", "JUnit"]
+const TOOLS_DEVOPS = ["Git", "GitHub Actions", "Docker", "Linux (Arch, Debian)", "VS Code"]
+const LEARNING_TOOLS = ["Azure", "Spring Boot", "JUnit", "AWS EC2", "AWS S3"]
 
 const TABS = [
   { label: "LANGUAGES & FRAMEWORKS", data: LANGUAGES_FRAMEWORKS },
   { label: "DATABASES", data: DATABASES },
   { label: "TOOLS & DEVOPS", data: TOOLS_DEVOPS },
-  { label: "FAMILIAR WITH", data: FAMILIAR_WITH },
+  { label: "LEARNING", data: LEARNING_TOOLS },
 ]
 
 const GRID_SIZE = 25

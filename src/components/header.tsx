@@ -16,22 +16,22 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-20 w-full px-6 py-4 flex items-center justify-around transition-colors duration-300 ${
+      className={`fixed top-0 left-0 z-20 w-full transition-colors duration-300 ${
         scrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
-      <nav className="space-x-4 text-primary">
-        <a href="#about" className="hover:underline">About</a>
-        <a href="#skills" className="hover:underline">Skills</a>
-        <a href="#projects" className="hover:underline">Projects</a>
-        <a href="#contact" className="hover:underline">Contact</a>
-      </nav>
+      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <nav className="space-x-4 text-primary">
+          <a href="#about" className="hover:underline">About</a>
+          <a href="#skills" className="hover:underline">Skills</a>
+          <a href="#projects" className="hover:underline">Projects</a>
+          <a href="#contact" className="hover:underline">Contact</a>
+        </nav>
 
-      <Button variant="secondary" className="text-primary" asChild>
-        <a href="/resume/resume_natthawat_se.pdf" download>
-          Resume
-        </a>
-      </Button>
+        <Button variant="secondary" className="text-primary" asChild>
+          <a href="/resume/resume_natthawat_se.pdf" download>Resume</a>
+        </Button>
+      </div>
     </header>
   )
 }
