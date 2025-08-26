@@ -26,7 +26,7 @@ export default function AboutMe() {
         </div>
 
         {/* Right column: looping video */}
-        <div className="relative rounded-2xl overflow-hidden shadow-xl border border-base-300 w-full max-w-[400px] aspect-square md:justify-self-end">
+        <div className="relative rounded-2xl overflow-hidden shadow-xl border border-base-300 w-full max-w-[500px] aspect-square md:justify-self-end">
           <video
             className="w-full h-full object-cover"
             src="/videos/clip1.mov"

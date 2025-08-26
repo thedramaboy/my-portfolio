@@ -20,28 +20,28 @@ interface TimelineProps {
 const timelineEntries: TimelineEntry[] = [
   {
     id: 1,
-    title: "Software Developer Intern · GoApricot (2025 – Present)",
+    title: "Software Developer Intern · GoApricot (2025 -Present)",
     description:
       "Contributed to a company website (Next.js/React), an online booking system (Supabase, shadcn/ui), and production bug fixes for FlashYourMeme (ASP.NET Core MVC). Worked in Agile sprints with senior developers.",
     layout: "left",
   },
   {
     id: 2,
-    title: "Diploma in Software Development · SAIT (2023 – 2025)",
+    title: "Diploma in Software Development · SAIT (2023 - 2025)",
     description:
       "Graduated with honours. Focused on full-stack development, cloud services, and collaborative project delivery using modern frameworks and tooling.",
     layout: "right",
   },
   {
     id: 3,
-    title: "Inspection Engineer · GCME (2020 – 2021)",
+    title: "Inspection Engineer · GCME (2020 - 2021)",
     description:
       "Built automated dashboards and analysed reliability data for high-risk equipment, improving decision-making and reducing reporting time.",
     layout: "left",
   },
   {
     id: 4,
-    title: "B.Eng. (Mechanical) · KMITL (2016 – 2019)",
+    title: "B.Eng. (Mechanical) · KMITL (2016 - 2019)",
     description:
       "Developed a strong foundation in engineering analysis and problem-solving before transitioning into software development.",
     layout: "right",
@@ -56,6 +56,7 @@ export function Timeline({
   return (
     <section id="timeline" className={cn("bg-base-200 py-16", className)}>
       <div className={cn("relative max-w-6xl mx-auto px-6", containerClassName)}>
+        {/* Center line */}
         <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-neutral-400/70 -translate-x-1/2 hidden md:block" />
 
         {entries.map((entry, i) => (
@@ -83,11 +84,11 @@ function TimelineItem({ entry, index }: { entry: TimelineEntry; index: number })
       style={{ opacity, scale }}
       className="relative mb-14 md:mb-20"
     >
-      {/* Dot ตรงเส้นกลาง */}
+      {/* Dot in center line */}
       <div className="absolute left-1/2 top-4 w-3 h-3 bg-primary rounded-full -translate-x-1/2 z-10 hidden md:block" />
 
       <div
-        className={cn("grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12")}
+        className={cn("grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 border-l-2 border-neutral-300/50 md:border-none pl-6 md:pl-0")}
       >
         {/* Content */}
         <div
