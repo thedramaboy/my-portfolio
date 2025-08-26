@@ -8,16 +8,17 @@ export default function AboutMe() {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left column: text */}
         <div className="flex flex-col justify-center space-y-6">
-          <h2 className="text-4xl font-bold text-primary tracking-wide">About me</h2>
+          <h2 className="text-4xl font-bold text-primary tracking-wide">About myself</h2>
           <p className="text-muted-foreground">
-            I am a junior full-stack developer with internship experience in production web
-            applications and booking systems. I enjoy debugging, simplifying complex flows, and
-            collaborating in agile teams.
+            I am a software developer with internship experience in web applications. 
+            I enjoy fixing issues, dividing complex flows into pieces, and learning from teamwork in agile environments.
           </p>
           <p className="text-muted-foreground">
-            Comfortable with Next.js/React, Supabase, ASP.NET Core MVC, and Flutter/Firebase.
-            I care about maintainable code, accessible UI, and concise documentation.
+            I have worked with Next.js/React, Supabase, ASP.NET Core MVC, and Flutter/Firebase, 
+            and I am eager to keep learning new tools and practices. 
+            I do care about writing clean code as much as I can (that what I got from Clean code from Robert C. Martin), designing friendly interfaces, and creating documentation that supports the team.
           </p>
+
 
           <div className="flex flex-wrap gap-3">
             <Link href="#timeline" className="btn btn-primary">View timeline</Link>

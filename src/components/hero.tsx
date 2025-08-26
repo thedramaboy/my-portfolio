@@ -2,8 +2,8 @@
 
 import { Button } from "./ui/button"
 import Link from "next/link"
-import { Github, Linkedin } from "lucide-react"
 import { motion } from "framer-motion"
+import { Github, Linkedin } from "lucide-react"
 import { useEffect, useRef } from "react"
 
 export default function Hero() {
@@ -125,7 +125,7 @@ export default function Hero() {
             Hi! I&apos;m Paul, a recent graduate from SAIT in Software Development. 
             I&apos;m still in the early stages of my career path<br/>
             with a long way to go and so much to learn.<br/><br/> 
-            Currently working as a software developer intern at <a href="https://goapricot.ca/" className="underline">GoApricot</a>.
+            Now I&apos;m currently working as a software developer intern at <a href="https://goapricot.ca/" className="underline">GoApricot</a>.
           </motion.p>
 
           <div className="space-x-4 py-6">

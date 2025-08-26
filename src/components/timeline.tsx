@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 export interface TimelineEntry {
   id: number
   title: string
+  company: string
   description: string
   layout: "left" | "right"
 }
@@ -20,30 +21,34 @@ interface TimelineProps {
 const timelineEntries: TimelineEntry[] = [
   {
     id: 1,
-    title: "Software Developer Intern · GoApricot (2025 -Present)",
+    title: "Software developer intern",
+    company: "GoApricot (2025 - Present)",
     description:
-      "Contributed to a company website (Next.js/React), an online booking system (Supabase, shadcn/ui), and production bug fixes for FlashYourMeme (ASP.NET Core MVC). Worked in Agile sprints with senior developers.",
+      "Contributed to a company website (Next.js/React), an online booking system (Supabase, shadcn/ui), and production bug fixes for FlashYourMeme (ASP.NET Core MVC). Worked in Agile sprints with senior developers using Jira.",
     layout: "left",
   },
   {
     id: 2,
-    title: "Diploma in Software Development · SAIT (2023 - 2025)",
+    title: "Diploma in Software Development",
+    company: "SAIT (2023 - 2025)",
     description:
       "Graduated with honours. Focused on full-stack development, cloud services, and collaborative project delivery using modern frameworks and tooling.",
     layout: "right",
   },
   {
     id: 3,
-    title: "Inspection Engineer · GCME (2020 - 2021)",
+    title: "Inspection Engineer",
+    company: "GCME (2020 - 2021)",
     description:
       "Built automated dashboards and analysed reliability data for high-risk equipment, improving decision-making and reducing reporting time.",
     layout: "left",
   },
   {
     id: 4,
-    title: "B.Eng. (Mechanical) · KMITL (2016 - 2019)",
+    title: "B.Eng. (Mechanical)",
+    company: "KMITL (2016 - 2019)",
     description:
-      "Developed a strong foundation in engineering analysis and problem-solving before transitioning into software development.",
+      "Developed a strong foundation in mechanical engineering, logical thinking and problem-solving.",
     layout: "right",
   },
 ]
@@ -105,7 +110,8 @@ function TimelineItem({ entry, index }: { entry: TimelineEntry; index: number })
             className="space-y-2 max-w-md"
           >
             <h3 className="text-xl md:text-2xl font-bold text-primary">
-              {entry.title}
+              {entry.title}<br/>
+              {entry.company}
             </h3>
             <p className="text-sm md:text-base text-base-content/80 leading-relaxed">
               {entry.description}
