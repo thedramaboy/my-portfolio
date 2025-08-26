@@ -23,9 +23,9 @@ const projects: Project[] = [
     longDescription:
       "A responsive company website developed during my internship at GoApricot. Contributed to building modular UI components (navigation, hero, services, footer) with animations and scalable design. Deployment and production release were handled by senior developers.",
     images: [
-      "/projects/goapricot/goapricot1.jpg",
-      "/projects/goapricot/goapricot2.jpg",
-      "/projects/goapricot/goapricot3.jpg",
+      "/projects/goapricot/goapricot1.JPG",
+      "/projects/goapricot/goapricot2.JPG",
+      "/projects/goapricot/goapricot3.JPG",
     ],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://goapricot.ca/",
@@ -36,7 +36,7 @@ const projects: Project[] = [
     description: "Scheduling and booking platform",
     longDescription:
       "An end-to-end booking platform created as part of my internship. Built booking workflows including authentication (login/signup), CRUD operations, and an admin dashboard. Implemented a calendar view, analytics cards, and modular UI components to improve efficiency for administrators.",
-    images: ["/projects/gobooqing/booq1.jpg"],
+    images: ["/projects/gobooqing/booq1.JPG"],
     technologies: ["Next.js", "React", "Supabase", "Tailwind CSS", "shadcn/ui"],
     liveUrl: "https://gobooqing.com/",
     status: "in-progress",
@@ -56,9 +56,9 @@ const projects: Project[] = [
     longDescription:
       "A capstone project developed with Flutter and Firebase. Led backend development, implementing secure CRUD operations and role-based access control. Integrated Firestore and authentication to ensure scalability and reliability for agricultural management.",
     images: [
-      "/projects/farm/farm1.jpg",
-      "/projects/farm/farm2.jpg",
-      "/projects/farm/farm3.jpg"
+      "/projects/farm/farm1.JPG",
+      "/projects/farm/farm2.JPG",
+      "/projects/farm/farm3.JPG"
     ],
     technologies: ["Flutter", "Dart", "Firebase"],
     status: "completed",
