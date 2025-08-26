@@ -124,7 +124,7 @@ export default function Hero() {
           Hi! I&apos;m Paul, a recent graduate from SAIT in Software Development. 
           I&apos;m still in the early stages of my career path<br/>
           with a long way to go and so much to learn.<br/><br/> 
-          Currently working as a junior full stack developer intern at <a href="https://goapricot.ca/" className="underline">GoApricot</a>.
+          Currently working as a software developer intern at <a href="https://goapricot.ca/" className="underline">GoApricot</a>.
         </motion.p>
 
         <div className="space-x-4 py-6">

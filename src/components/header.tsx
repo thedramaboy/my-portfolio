@@ -1,8 +1,25 @@
+"use client"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <header className="fixed top-0 left-0 z-20 w-full px-6 py-4 flex items-center justify-around bg-transparent text-primary">
+    <header
+      className={`fixed top-0 left-0 z-20 w-full px-6 py-4 flex items-center justify-around transition-colors duration-300 ${
+        scrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent"
+      }`}
+    >
       <nav className="space-x-4 text-primary">
         <a href="#about" className="hover:underline">About</a>
         <a href="#skills" className="hover:underline">Skills</a>
