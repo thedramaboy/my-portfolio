@@ -1,58 +1,52 @@
-"use client";
+"use client"
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { useRef } from "react"
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
+import { cn } from "@/lib/utils"
 
 export interface TimelineEntry {
-  id: number;
-  image: string;
-  alt: string;
-  title: string;
-  description: string;
-  layout: "left" | "right";
+  id: number
+  title: string
+  description: string
+  layout: "left" | "right"
 }
 
 interface TimelineProps {
-  entries?: TimelineEntry[];
-  className?: string;
-  containerClassName?: string;
+  entries?: TimelineEntry[]
+  className?: string
+  containerClassName?: string
 }
 
-const timelineEntries = [
+const timelineEntries: TimelineEntry[] = [
   {
     id: 1,
-    image:
-      "/projects/farm/farm1.jpg",
-    alt: "Woman runner in artistic motion blur",
-    title: "Every Step Counts",
+    title: "Software Developer Intern · GoApricot (2025 – Present)",
     description:
-      "From your first jog around the block to your hundredth marathon, every runner has a story. At Wadada, we celebrate beginners who are just lacing up their shoes for the first time. Your pace doesn't matter—your passion does. What are you waiting for?",
-    layout: "left" as const,
+      "Contributed to a company website (Next.js/React), an online booking system (Supabase, shadcn/ui), and production bug fixes for FlashYourMeme (ASP.NET Core MVC). Worked in Agile sprints with senior developers.",
+    layout: "left",
   },
   {
     id: 2,
-    image:
-      "/projects/farm/farm1.jpg",
-    alt: "Male runner with determination and focus",
-    title: "Find Your Rhythm",
+    title: "Diploma in Software Development · SAIT (2023 – 2025)",
     description:
-      "Whether you're chasing personal records or simply chasing the sunrise, our community embraces every type of runner. From speed demons to mindful joggers, from trail blazers to track stars—there's a place for you here. The only question is: what are you waiting for?",
-    layout: "right" as const,
+      "Graduated with honours. Focused on full-stack development, cloud services, and collaborative project delivery using modern frameworks and tooling.",
+    layout: "right",
   },
   {
     id: 3,
-    image:
-      "/projects/farm/farm1.jpg",
-    alt: "Runner in dynamic motion showing strength and grace",
-    title: "Join the Movement",
+    title: "Inspection Engineer · GCME (2020 – 2021)",
     description:
-      "Running isn't just about the miles—it's about the moments. The early morning conversations, the shared struggles, the collective victories. At Wadada Run Club, you're not just joining a group, you're joining a family. So lace up, step out, and discover what you're truly capable of. Seriously, what are you waiting for?",
-    layout: "left" as const,
+      "Built automated dashboards and analysed reliability data for high-risk equipment, improving decision-making and reducing reporting time.",
+    layout: "left",
   },
-];
-
+  {
+    id: 4,
+    title: "B.Eng. (Mechanical) · KMITL (2016 – 2019)",
+    description:
+      "Developed a strong foundation in engineering analysis and problem-solving before transitioning into software development.",
+    layout: "right",
+  },
+]
 
 export function Timeline({
   entries = timelineEntries,
@@ -60,86 +54,68 @@ export function Timeline({
   containerClassName,
 }: TimelineProps) {
   return (
-    <section id="timeline" className={cn("bg-base-200 py-20", className)}>
+    <section id="timeline" className={cn("bg-base-200 py-16", className)}>
       <div className={cn("relative max-w-6xl mx-auto px-6", containerClassName)}>
+        <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-neutral-400/70 -translate-x-1/2 hidden md:block" />
 
-        {/* Central vertical line */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-base-300 -translate-x-1/2 hidden md:block" />
-
-        {Array.isArray(entries) && entries.length > 0 ? (
-          entries.map((entry, i) => (
-            <TimelineItem key={entry.id ?? i} entry={entry} index={i} />
-          ))
-        ) : (
-          <div className="text-center text-sm text-base-content/60">
-            No timeline entries yet.
-          </div>
-        )}
+        {entries.map((entry, i) => (
+          <TimelineItem key={entry.id ?? i} entry={entry} index={i} />
+        ))}
       </div>
     </section>
-  );
+  )
 }
 
 function TimelineItem({ entry, index }: { entry: TimelineEntry; index: number }) {
-  const itemRef = useRef<HTMLDivElement>(null);
+  const itemRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: itemRef,
     offset: ["start center", "end center"],
-  });
+  })
 
-  const opacity = useEase(scrollYProgress, [0, 0.25, 0.75, 1], [0.35, 1, 1, 0.35]);
-  const scale = useEase(scrollYProgress, [0, 0.25, 0.75, 1], [0.9, 1, 1, 0.9]);
-  const isLeft = entry.layout === "left";
+  const opacity = useEase(scrollYProgress, [0, 0.25, 0.75, 1], [0.35, 1, 1, 0.35])
+  const scale = useEase(scrollYProgress, [0, 0.25, 0.75, 1], [0.95, 1, 1, 0.95])
+  const isLeft = entry.layout === "left"
 
   return (
-    <motion.div ref={itemRef} style={{ opacity, scale }} className="relative mb-20 md:mb-32">
-      <div className="absolute left-1/2 top-1/2 size-4 bg-primary rounded-full -translate-x-1/2 -translate-y-1/2 z-10 hidden md:block" />
+    <motion.div
+      ref={itemRef}
+      style={{ opacity, scale }}
+      className="relative mb-14 md:mb-20"
+    >
+      {/* Dot ตรงเส้นกลาง */}
+      <div className="absolute left-1/2 top-4 w-3 h-3 bg-primary rounded-full -translate-x-1/2 z-10 hidden md:block" />
 
-      <div className={cn("grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center", { "md:text-right": isLeft })}>
-        {/* Image */}
-        <div className={cn("relative", { "md:order-2": isLeft })}>
-          <div className="sticky top-20">
-            <div className="relative overflow-hidden rounded-2xl aspect-[3/4] bg-base-300">
-              <Image
-                src={entry.image || "/placeholder.svg"}
-                alt={entry.alt}
-                fill
-                className="object-cover transition-transform duration-700 hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority={index === 0}
-              />
-              <div className="absolute inset-0 bg-black/10" />
-            </div>
-          </div>
-        </div>
-
+      <div
+        className={cn("grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12")}
+      >
         {/* Content */}
-        <div className={cn("relative", { "md:order-1": isLeft })}>
-          <div className="sticky top-28">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
-              className="space-y-4"
-            >
-              <p className="font-mono text-xs tracking-wider text-base-content/60">
-                {index + 1 < 10 ? `0${index + 1}` : index + 1}
-              </p>
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-wide text-primary">
-                {entry.title}
-              </h3>
-              <p className="text-base md:text-lg leading-relaxed text-base-content/80 max-w-prose">
-                {entry.description}
-              </p>
-            </motion.div>
-          </div>
+        <div
+          className={cn("space-y-2", {
+            "md:col-start-1 md:justify-self-end md:text-right": isLeft,
+            "md:col-start-2 md:justify-self-start md:text-left": !isLeft,
+          })}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="space-y-2 max-w-md"
+          >
+            <h3 className="text-xl md:text-2xl font-bold text-primary">
+              {entry.title}
+            </h3>
+            <p className="text-sm md:text-base text-base-content/80 leading-relaxed">
+              {entry.description}
+            </p>
+          </motion.div>
         </div>
       </div>
     </motion.div>
-  );
+  )
 }
 
 function useEase(progress: MotionValue<number>, input: number[], output: number[]) {
-  return useTransform(progress, input, output);
+  return useTransform(progress, input, output)
 }
