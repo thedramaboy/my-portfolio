@@ -18,7 +18,7 @@ export type Project = {
 
 const projects: Project[] = [
   {
-    title: "Company website",
+    title: "Company website (Front-end)",
     description: "Corporate SaaS website",
     longDescription:
       "A responsive company website developed during my internship at GoApricot. Contributed to building modular UI components (navigation, hero, services, footer) with animations and scalable design. Deployment and production release were handled by senior developers.",
@@ -31,15 +31,45 @@ const projects: Project[] = [
     liveUrl: "https://goapricot.ca/",
     status: "live",
   },
+  // {
+  //   title: "Online booking system",
+  //   description: "Scheduling and booking platform",
+  //   longDescription:
+  //     "An end-to-end booking platform created as part of my internship. Built booking workflows including authentication (login/signup), CRUD operations, and an admin dashboard. Implemented a calendar view, analytics cards, and modular UI components to improve efficiency for administrators.",
+  //   images: ["/projects/gobooqing/booq1.JPG"],
+  //   technologies: ["Next.js", "React", "Supabase", "Tailwind CSS", "shadcn/ui"],
+  //   liveUrl: "https://gobooqing.com/",
+  //   status: "in-progress",
+  // },
   {
-    title: "Online booking system",
-    description: "Scheduling and booking platform",
+    title: "BSH Drug (Full-stack)",
+    description: "Pharmaceutical database & inventory system for medical team",
     longDescription:
-      "An end-to-end booking platform created as part of my internship. Built booking workflows including authentication (login/signup), CRUD operations, and an admin dashboard. Implemented a calendar view, analytics cards, and modular UI components to improve efficiency for administrators.",
-    images: ["/projects/gobooqing/booq1.JPG"],
+      "An inventory dashboard with CRUD for drugs/categories, role-based access, and Excel import/export and implemented secure file management for images and PDFs with Supabase storage.",
+    images: [
+      "/projects/bsh/bsh1.JPG",
+      "/projects/bsh/bsh2.JPG",
+      "/projects/bsh/bsh3.JPG",
+    ],
     technologies: ["Next.js", "React", "Supabase", "Tailwind CSS", "shadcn/ui"],
-    liveUrl: "https://gobooqing.com/",
-    status: "in-progress",
+    liveUrl: "https://bsh-drug-info.vercel.app/",
+    status: "live",
+  },
+    {
+    title: "JR Plus (Full-stack)",
+    description: "Pharmaceutical e-commerce platform for pharmacy distributor",
+    longDescription:
+      "A back-office system for wholesale drug distribution with dashboards, product and order management.",
+    images: [
+      "/projects/jr/jr1.JPG",
+      "/projects/jr/jr2.JPG",
+      "/projects/jr/jr3.JPG",
+      "/projects/jr/jr4.JPG",
+      "/projects/jr/jr5.JPG"
+    ],
+    technologies: ["Next.js", "React", "Supabase", "Tailwind CSS", "shadcn/ui"],
+    liveUrl: "https://jrplus.vercel.app/",
+    status: "live",
   },
   {
     title: "FlashYourMeme",
@@ -48,7 +78,7 @@ const projects: Project[] = [
       "Supported maintenance of a production ASP.NET Core MVC application by debugging and resolving customer-reported issues. Worked across Models, Views, and Controllers to fix backend errors and UI inconsistencies, improving overall stability and usability.",
     images: ["/projects/flashyourmeme/flashyourmeme_logo.png"],
     technologies: ["ASP.NET Core MVC", "C#", "Razor", "Firebase"],
-    status: "live",
+    status: "completed",
   },
   {
     title: "Ferra Ag (Capstone project)",
@@ -176,9 +206,9 @@ export default function Projects() {
     <section id="projects" className="min-h-screen px-6 py-20 bg-background text-foreground">
       <div className="max-w-6xl mx-auto space-y-16">
         <div className="text-center">
-          <h2 className="text-4xl font-bold tracking-wide mb-4 text-primary">Projects as an intern</h2>
+          <h2 className="text-4xl font-bold tracking-wide mb-4 text-primary">Projects</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A collection of projects I&apos;ve worked on as an intern.
+            A collection of my projects I&apos;ve worked on.
           </p>
         </div>
 
