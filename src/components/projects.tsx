@@ -23,9 +23,9 @@ const projects: Project[] = [
     longDescription:
       "Delivered high-quality features for the TempJob ecosystem. Designed back-office modules using a Controller-Service-Model architecture and developed a React Native mobile application. Managed the complete deployment pipeline to Google Play Console via EAS (Expo).",
     images: [
-      "/projects/tempjob/temp1.jpg",
-      "/projects/tempjob/temp2.jpg",
-      "/projects/tempjob/temp3.jpg",
+      "/projects/tempjob/temp1.JPG",
+      "/projects/tempjob/temp2.JPG",
+      "/projects/tempjob/temp3.JPG",
       "/projects/tempjob/temp4.jpg",
     ],
     technologies: [
