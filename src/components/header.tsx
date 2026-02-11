@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { useEffect, useState } from "react"
+import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 0)
-    }
+      setScrolled(window.scrollY > 0);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
@@ -23,16 +23,26 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <nav className="space-x-4 text-primary">
-          <a href="#about" className="hover:underline">About</a>
-          <a href="#skills" className="hover:underline">Skills</a>
-          <a href="#projects" className="hover:underline">Projects</a>
-          <a href="#contact" className="hover:underline">Contact</a>
+          <a href="#about" className="hover:underline">
+            About
+          </a>
+          <a href="#skills" className="hover:underline">
+            Skills
+          </a>
+          <a href="#projects" className="hover:underline">
+            Projects
+          </a>
+          <a href="#contact" className="hover:underline">
+            Contact
+          </a>
         </nav>
 
         <Button variant="secondary" className="text-primary" asChild>
-          <a href="/resume/resume_natthawat_se.pdf" download>Resume</a>
+          <a href="/resume/resume_natthawat_se.pdf" download>
+            Resume
+          </a>
         </Button>
       </div>
     </header>
-  )
+  );
 }

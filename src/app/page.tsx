@@ -5,19 +5,19 @@ import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
-import { Timeline } from "@/components/timeline";
+import ProfessionalJourney from "@/components/professionaljourney";
 
 export default function Home() {
   return (
     <div>
-      <Header/>
-      <Hero/>
-      <About/>
-      <Timeline/>
+      <Header />
+      <Hero />
+      <About />
+      <ProfessionalJourney />
       <Skills />
       <Projects />
-      <Contact/>
-      <Footer/>
+      <Contact />
+      <Footer />
     </div>
   );
 }

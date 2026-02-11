@@ -1,24 +1,74 @@
-"use client"
+"use client";
 
-import { useState, useRef } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export type Project = {
-  title: string
-  description: string
-  longDescription: string
-  images: string[]
-  technologies: string[]
-  liveUrl?: string
-  status: "live" | "in-progress" | "completed"
-}
+  title: string;
+  description: string;
+  longDescription: string;
+  images: string[];
+  technologies: string[];
+  liveUrl?: string;
+  status: "live" | "in-progress" | "completed";
+};
 
 const projects: Project[] = [
   {
-    title: "Company website (Front-end)",
+    title: "TempJob (Fastwork Thailand)",
+    description: "Multi-platform staffing & management solution",
+    longDescription:
+      "Delivered high-quality features for the TempJob ecosystem. Designed back-office modules using a Controller-Service-Model architecture and developed a React Native mobile application. Managed the complete deployment pipeline to Google Play Console via EAS (Expo).",
+    images: [
+      "/projects/tempjob/temp1.jpg",
+      "/projects/tempjob/temp2.jpg",
+      "/projects/tempjob/temp3.jpg",
+      "/projects/tempjob/temp4.jpg",
+    ],
+    technologies: [
+      "Next.js",
+      "Node.js (Express)",
+      "React Native",
+      "Google Maps API",
+      "EAS",
+    ],
+    liveUrl: "https://www.tempjob.in.th/",
+    status: "live",
+  },
+  {
+    title: "JR Plus (Full-stack)",
+    description: "E-commerce platform for pharmacy distributors",
+    longDescription:
+      "Built a robust back-office system for wholesale distribution. Implemented real-time order tracking and product management dashboards to streamline the supply chain process between distributors and pharmacies.",
+    images: [
+      "/projects/jr/jr1.JPG",
+      "/projects/jr/jr2.JPG",
+      "/projects/jr/jr3.JPG",
+      "/projects/jr/jr4.JPG",
+      "/projects/jr/jr5.JPG",
+    ],
+    technologies: ["Next.js", "React", "Supabase", "Tailwind CSS"],
+    liveUrl: "https://jrplus.vercel.app/",
+    status: "live",
+  },
+  {
+    title: "BSH Drug (Full-stack)",
+    description: "Pharmaceutical database & inventory system",
+    longDescription:
+      "Developed a specialized inventory dashboard for medical teams with secure file management (Supabase Storage). Features include complex CRUD operations for drug categories, Role-Based Access Control (RBAC), and automated Excel import/export functionality.",
+    images: [
+      "/projects/bsh/bsh1.JPG",
+      "/projects/bsh/bsh2.JPG",
+      "/projects/bsh/bsh3.JPG",
+    ],
+    technologies: ["Next.js", "React", "Supabase", "Tailwind CSS"],
+    status: "completed",
+  },
+  {
+    title: "Company website",
     description: "Corporate SaaS website",
     longDescription:
       "A responsive company website developed during my internship at GoApricot. Contributed to building modular UI components (navigation, hero, services, footer) with animations and scalable design. Deployment and production release were handled by senior developers.",
@@ -27,73 +77,33 @@ const projects: Project[] = [
       "/projects/goapricot/goapricot2.JPG",
       "/projects/goapricot/goapricot3.JPG",
     ],
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
     liveUrl: "https://goapricot.ca/",
-    status: "live",
-  },
-  // {
-  //   title: "Online booking system",
-  //   description: "Scheduling and booking platform",
-  //   longDescription:
-  //     "An end-to-end booking platform created as part of my internship. Built booking workflows including authentication (login/signup), CRUD operations, and an admin dashboard. Implemented a calendar view, analytics cards, and modular UI components to improve efficiency for administrators.",
-  //   images: ["/projects/gobooqing/booq1.JPG"],
-  //   technologies: ["Next.js", "React", "Supabase", "Tailwind CSS", "shadcn/ui"],
-  //   liveUrl: "https://gobooqing.com/",
-  //   status: "in-progress",
-  // },
-  {
-    title: "BSH Drug (Full-stack)",
-    description: "Pharmaceutical database & inventory system for medical team",
-    longDescription:
-      "An inventory dashboard with CRUD for drugs/categories, role-based access, and Excel import/export and implemented secure file management for images and PDFs with Supabase storage.",
-    images: [
-      "/projects/bsh/bsh1.JPG",
-      "/projects/bsh/bsh2.JPG",
-      "/projects/bsh/bsh3.JPG",
-    ],
-    technologies: ["Next.js", "React", "Supabase", "Tailwind CSS", "shadcn/ui"],
-    liveUrl: "https://bsh-drug-info.vercel.app/",
-    status: "live",
-  },
-    {
-    title: "JR Plus (Full-stack)",
-    description: "Pharmaceutical e-commerce platform for pharmacy distributor",
-    longDescription:
-      "A back-office system for wholesale drug distribution with dashboards, product and order management.",
-    images: [
-      "/projects/jr/jr1.JPG",
-      "/projects/jr/jr2.JPG",
-      "/projects/jr/jr3.JPG",
-      "/projects/jr/jr4.JPG",
-      "/projects/jr/jr5.JPG"
-    ],
-    technologies: ["Next.js", "React", "Supabase", "Tailwind CSS", "shadcn/ui"],
-    liveUrl: "https://jrplus.vercel.app/",
     status: "live",
   },
   {
     title: "FlashYourMeme",
-    description: "Bug fixing and maintenance project",
+    description: "Production stability & bug resolution",
     longDescription:
-      "Supported maintenance of a production ASP.NET Core MVC application by debugging and resolving customer-reported issues. Worked across Models, Views, and Controllers to fix backend errors and UI inconsistencies, improving overall stability and usability.",
+      "Diagnosed and resolved complex backend logic issues within a production ASP.NET Core MVC environment. Improved UI consistency across MVC layers to ensure high system stability and seamless user experience.",
     images: ["/projects/flashyourmeme/flashyourmeme_logo.png"],
-    technologies: ["ASP.NET Core MVC", "C#", "Razor", "Firebase"],
+    technologies: ["ASP.NET Core MVC", "C#", "Firebase", "Firestore"],
     status: "completed",
   },
   {
     title: "Ferra Ag (Capstone project)",
-    description: "Smart agriculture web application for farmers",
+    description: "Smart agriculture management system",
     longDescription:
-      "A capstone project developed with Flutter and Firebase. Led backend development, implementing secure CRUD operations and role-based access control. Integrated Firestore and authentication to ensure scalability and reliability for agricultural management.",
+      "A Flutter-based application for agricultural data management. Led the backend implementation using Firebase, focusing on secure CRUD operations and scalable Firestore architecture for real-time monitoring.",
     images: [
       "/projects/farm/farm1.JPG",
       "/projects/farm/farm2.JPG",
-      "/projects/farm/farm3.JPG"
+      "/projects/farm/farm3.JPG",
     ],
-    technologies: ["Flutter", "Dart", "Firebase"],
+    technologies: ["Flutter", "Dart", "Firebase", "Firestore"],
     status: "completed",
   },
-]
+];
 
 const StatusBadge = ({ status }: { status: Project["status"] }) => {
   const statusConfig = {
@@ -109,29 +119,41 @@ const StatusBadge = ({ status }: { status: Project["status"] }) => {
       text: "In Progress",
       className: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
     },
-  } as const
+  } as const;
 
-  const config = statusConfig[status]
+  const config = statusConfig[status];
   return (
-    <span className={`px-2 py-1 text-xs rounded-full border ${config.className}`}>
+    <span
+      className={`px-2 py-1 text-xs rounded-full border ${config.className}`}
+    >
       {config.text}
     </span>
-  )
-}
+  );
+};
 
-function Carousel({ images, alt, priority }: { images: string[]; alt: string; priority?: boolean }) {
-  const [index, setIndex] = useState(0)
-  const containerRef = useRef<HTMLDivElement>(null)
+function Carousel({
+  images,
+  alt,
+  priority,
+}: {
+  images: string[];
+  alt: string;
+  priority?: boolean;
+}) {
+  const [index, setIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const go = (delta: number) => setIndex((i) => (i + delta + images.length) % images.length)
-  const set = (i: number) => setIndex(((i % images.length) + images.length) % images.length)
+  const go = (delta: number) =>
+    setIndex((i) => (i + delta + images.length) % images.length);
+  const set = (i: number) =>
+    setIndex(((i % images.length) + images.length) % images.length);
 
-  let startX = 0
-  const onTouchStart = (e: React.TouchEvent) => (startX = e.touches[0].clientX)
+  let startX = 0;
+  const onTouchStart = (e: React.TouchEvent) => (startX = e.touches[0].clientX);
   const onTouchEnd = (e: React.TouchEvent) => {
-    const dx = e.changedTouches[0].clientX - startX
-    if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1)
-  }
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+  };
 
   return (
     <div
@@ -198,15 +220,20 @@ function Carousel({ images, alt, priority }: { images: string[]; alt: string; pr
         </>
       )}
     </div>
-  )
+  );
 }
 
 export default function Projects() {
   return (
-    <section id="projects" className="min-h-screen px-6 py-20 bg-background text-foreground">
+    <section
+      id="projects"
+      className="min-h-screen px-6 py-20 bg-background text-foreground"
+    >
       <div className="max-w-6xl mx-auto space-y-16">
         <div className="text-center">
-          <h2 className="text-4xl font-bold tracking-wide mb-4 text-primary">Projects</h2>
+          <h2 className="text-4xl font-bold tracking-wide mb-4 text-primary">
+            Projects
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A collection of my projects I&apos;ve worked on.
           </p>
@@ -214,9 +241,9 @@ export default function Projects() {
 
         <div className="space-y-20">
           {projects.map((project, idx) => {
-            const isEven = idx % 2 === 0
-            const titleId = `project-title-${idx}`
-            const descId = `project-desc-${idx}`
+            const isEven = idx % 2 === 0;
+            const titleId = `project-title-${idx}`;
+            const descId = `project-desc-${idx}`;
 
             return (
               <article
@@ -239,20 +266,34 @@ export default function Projects() {
                 </div>
 
                 {/* Details */}
-                <div className={`space-y-6 ${isEven ? "md:order-2" : "md:order-1"}`}>
+                <div
+                  className={`space-y-6 ${isEven ? "md:order-2" : "md:order-1"}`}
+                >
                   <div className="flex items-center gap-3">
-                    <h3 id={titleId} className="text-3xl font-bold text-primary">
+                    <h3
+                      id={titleId}
+                      className="text-3xl font-bold text-primary"
+                    >
                       {project.title}
                     </h3>
                     <StatusBadge status={project.status} />
                   </div>
 
-                  <p className="text-lg text-muted-foreground">{project.description}</p>
-                  <p id={descId} className="text-muted-foreground leading-relaxed">{project.longDescription}</p>
+                  <p className="text-lg text-muted-foreground">
+                    {project.description}
+                  </p>
+                  <p
+                    id={descId}
+                    className="text-muted-foreground leading-relaxed"
+                  >
+                    {project.longDescription}
+                  </p>
 
                   {/* Tech stacks */}
                   <div>
-                    <h4 className="text-sm font-semibold text-primary mb-2">Tech stacks:</h4>
+                    <h4 className="text-sm font-semibold text-primary mb-2">
+                      Tech stacks:
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
                         <span
@@ -281,10 +322,10 @@ export default function Projects() {
                   </div>
                 </div>
               </article>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }
