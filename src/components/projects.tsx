@@ -39,7 +39,7 @@ const projects: Project[] = [
     status: "live",
   },
   {
-    title: "JR Plus (Full-stack)",
+    title: "JR Plus",
     description: "E-commerce platform for pharmacy distributors",
     longDescription:
       "Built a robust back-office system for wholesale distribution. Implemented real-time order tracking and product management dashboards to streamline the supply chain process between distributors and pharmacies.",
@@ -55,7 +55,7 @@ const projects: Project[] = [
     status: "live",
   },
   {
-    title: "BSH Drug (Full-stack)",
+    title: "BSH Drug",
     description: "Pharmaceutical database & inventory system",
     longDescription:
       "Developed a specialized inventory dashboard for medical teams with secure file management (Supabase Storage). Features include complex CRUD operations for drug categories, Role-Based Access Control (RBAC), and automated Excel import/export functionality.",
@@ -68,7 +68,7 @@ const projects: Project[] = [
     status: "completed",
   },
   {
-    title: "Company website",
+    title: "GoApricot company website",
     description: "Corporate SaaS website",
     longDescription:
       "A responsive company website developed during my internship at GoApricot. Contributed to building modular UI components (navigation, hero, services, footer) with animations and scalable design. Deployment and production release were handled by senior developers.",
