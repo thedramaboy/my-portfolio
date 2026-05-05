@@ -24,7 +24,7 @@ const experiences = [
     ],
   },
   {
-    period: "Jan 2020 - Jan 2021",
+    period: "Jan 2020 - Jan 2022",
     title: "Inspection Engineer, Plant Reliability and Integrity",
     company: "GC Maintenance and Engineering Company Limited (GCME)",
     location: "Rayong, TH",
