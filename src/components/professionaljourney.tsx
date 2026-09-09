@@ -52,8 +52,8 @@ const education = [
 
 export default function ProfessionalJourney() {
   return (
-    <section id="experience" className="py-12">
-      <div className="max-w-6xl mx-auto px-6 gap-8">
+    <section id="experience" className="py-10">
+      <div className="max-w-4xl mx-auto px-6 gap-8">
         {/* Experience Section */}
         <div>
           <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-10">

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function AboutMe() {
   return (
-    <section id="about" className="bg-base-100 text-base-content py-20">
+    <section id="about" className="bg-base-100 text-base-content py-10">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div></div>
         {/* Left column: text */}
@@ -25,12 +25,6 @@ export default function AboutMe() {
             friendly interfaces, and creating documentation that supports the
             team.
           </p>
-
-          <div className="flex flex-wrap gap-3">
-            <Link href="#projects" className="btn btn-outline">
-              See projects
-            </Link>
-          </div>
         </div>
       </div>
     </section>
