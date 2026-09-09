@@ -60,7 +60,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="bg-background text-foreground px-6 py-20">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left column */}
         <div className="flex flex-col justify-center space-y-6">
           <h2 className="text-4xl font-bold text-primary tracking-wide">

@@ -21,7 +21,7 @@ export default function Header() {
         scrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
         <nav className="space-x-4 text-primary">
           <a href="#about" className="hover:underline">
             About

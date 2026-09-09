@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <div className="relative z-10 flex h-full items-center">
-        <div className="max-w-6xl mx-auto px-6 w-full text-left flex flex-col justify-center">
+        <div className="max-w-4xl mx-auto px-6 w-full text-left flex flex-col justify-center">
           <div className="flex items-center gap-4 mb-4">
             <h1 className="text-6xl font-semibold text-primary tracking-wider sm:text-7xl lg:text-8xl">
               Nate Se.
