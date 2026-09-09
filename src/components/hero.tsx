@@ -26,22 +26,14 @@ export default function Hero() {
           </div>
 
           <p className="text-lg text-primary">
-            👋 Hi! I&apos;m Nate, a recent graduate from SAIT in Software
-            Development.
+            👋 Hi! I&apos;m Nate, a graduate from SAIT in Software
+            development.
             <br />
             I&apos;m still in the early stages of my career path with a long way
             to go and so much to learn.
             <br />
             <br />
-            Now I&apos;m currently working as a software developer intern at{" "}
-            <a
-              href="https://goapricot.ca/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline font-medium"
-            >
-              GoApricot
-            </a>
+            Now I&apos;m currently looking for a junior software developer role.
           </p>
 
           <div className="space-x-4 py-6">

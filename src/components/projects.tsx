@@ -2,8 +2,7 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export type Project = {
@@ -12,8 +11,6 @@ export type Project = {
   longDescription: string;
   images: string[];
   technologies: string[];
-  liveUrl?: string;
-  status: "live" | "in-progress" | "completed";
 };
 
 const projects: Project[] = [
@@ -34,9 +31,7 @@ const projects: Project[] = [
       "React Native",
       "Google Maps API",
       "EAS",
-    ],
-    liveUrl: "https://www.tempjob.in.th/",
-    status: "live",
+    ]
   },
   {
     title: "JR Plus",
@@ -51,8 +46,6 @@ const projects: Project[] = [
       "/projects/jr/jr5.JPG",
     ],
     technologies: ["Next.js", "React", "Supabase", "Tailwind CSS"],
-    liveUrl: "https://jrplus.vercel.app/",
-    status: "live",
   },
   {
     title: "BSH Drug",
@@ -65,7 +58,6 @@ const projects: Project[] = [
       "/projects/bsh/bsh3.JPG",
     ],
     technologies: ["Next.js", "React", "Supabase", "Tailwind CSS"],
-    status: "completed",
   },
   {
     title: "GoApricot company website",
@@ -78,8 +70,6 @@ const projects: Project[] = [
       "/projects/goapricot/goapricot3.JPG",
     ],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-    liveUrl: "https://goapricot.ca/",
-    status: "live",
   },
   {
     title: "FlashYourMeme",
@@ -88,7 +78,6 @@ const projects: Project[] = [
       "Diagnosed and resolved complex backend logic issues within a production ASP.NET Core MVC environment. Improved UI consistency across MVC layers to ensure high system stability and seamless user experience.",
     images: ["/projects/flashyourmeme/flashyourmeme_logo.png"],
     technologies: ["ASP.NET Core MVC", "C#", "Firebase", "Firestore"],
-    status: "completed",
   },
   {
     title: "Ferra Ag (Capstone project)",
@@ -101,35 +90,8 @@ const projects: Project[] = [
       "/projects/farm/farm3.JPG",
     ],
     technologies: ["Flutter", "Dart", "Firebase", "Firestore"],
-    status: "completed",
   },
 ];
-
-const StatusBadge = ({ status }: { status: Project["status"] }) => {
-  const statusConfig = {
-    live: {
-      text: "Live",
-      className: "bg-green-500/20 text-green-400 border-green-500/30",
-    },
-    completed: {
-      text: "Completed",
-      className: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-    },
-    "in-progress": {
-      text: "In Progress",
-      className: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
-    },
-  } as const;
-
-  const config = statusConfig[status];
-  return (
-    <span
-      className={`px-2 py-1 text-xs rounded-full border ${config.className}`}
-    >
-      {config.text}
-    </span>
-  );
-};
 
 function Carousel({
   images,
@@ -276,7 +238,6 @@ export default function Projects() {
                     >
                       {project.title}
                     </h3>
-                    <StatusBadge status={project.status} />
                   </div>
 
                   <p className="text-lg text-muted-foreground">
@@ -304,21 +265,6 @@ export default function Projects() {
                         </span>
                       ))}
                     </div>
-                  </div>
-
-                  {/* Action button */}
-                  <div className="flex gap-4 pt-2">
-                    {project.liveUrl && (
-                      <Link
-                        href={project.liveUrl}
-                        target="_blank"
-                        className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition"
-                        aria-label={`View ${project.title} live site`}
-                      >
-                        <ExternalLink className="h-4 w-4" />
-                        View Live
-                      </Link>
-                    )}
                   </div>
                 </div>
               </article>

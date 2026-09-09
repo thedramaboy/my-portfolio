@@ -2,6 +2,17 @@
 
 const experiences = [
   {
+    period: "July 2025 - June 2026",
+    title: "Software developer (Intern)",
+    company: "GoApricot",
+    location: "Calgary, AB",
+    details: [
+      "Built responsive web apps and booking workflows using Next.js, React, and Supabase; improved usability and management efficiency.",
+      "Debugged production issues in .NET Core MVC; re-engineered pagination from page-based to query cursors for better performance.",
+      "Delivered features within Agile sprints, collaborating with designers and senior devs.",
+    ],
+  },
+  {
     period: "Sep 2025 - Present",
     title: "Full-stack Developer (Remote)",
     company: "Fastwork Thailand",
@@ -13,18 +24,7 @@ const experiences = [
     ],
   },
   {
-    period: "July 2025 - Present",
-    title: "Software Developer (Intern)",
-    company: "GoApricot",
-    location: "Calgary, AB",
-    details: [
-      "Built responsive web apps and booking workflows using Next.js, React, and Supabase; improved usability and management efficiency.",
-      "Debugged production issues in .NET Core MVC; re-engineered pagination from page-based to query cursors for better performance.",
-      "Delivered features within Agile sprints, collaborating with designers and senior devs.",
-    ],
-  },
-  {
-    period: "Jan 2020 - Jan 2022",
+    period: "Jan 2020 - Jan 2021",
     title: "Inspection Engineer, Plant Reliability and Integrity",
     company: "GC Maintenance and Engineering Company Limited (GCME)",
     location: "Rayong, TH",
