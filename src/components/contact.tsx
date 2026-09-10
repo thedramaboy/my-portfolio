@@ -7,17 +7,16 @@ export default function Contact() {
 
   return (
     <section id="contact" className="px-6 py-10 bg-background text-foreground">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold mb-4 text-primary">I would love to hear anything from you</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-2xl font-bold mb-4 text-primary">I would love to hear anything from you</h2>
+        <p className="text-base text-muted-foreground mb-10">
           Now seeking a junior software developer or an internship opportunity for 2026!
         </p>
 
-        <div className="gap-12 text-center">
-          {/* Contact Info */}
+        <div>
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-primary">Thank you for visiting.</h3>
-              <p className="text-muted-foreground mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-primary">Thank you for visiting.</h3>
+              <p className="text-base text-muted-foreground mb-6">
                 Feel free to reach me out through any of these channels:
               </p>
               
