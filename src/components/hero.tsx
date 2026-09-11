@@ -2,7 +2,6 @@
 
 import { Button } from "./ui/button";
 import Link from "next/link";
-import { Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -41,9 +40,15 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="icon"
-                className="border border-black"
+                className="border border-gray"
               >
-                <Github className="h-4 w-4" />
+                <Image
+                  src="/images/github.png"
+                  width={16}
+                  height={16}
+                  className="h-4 w-4"
+                  alt="GitHub"
+                />
                 <span className="sr-only">GitHub</span>
               </Button>
             </Link>
@@ -51,9 +56,15 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="icon"
-                className="border border-black"
+                className="border border-gray"
               >
-                <Linkedin className="h-4 w-4" />
+                <Image
+                  src="/images/linkedin.png"
+                  width={16}
+                  height={16}
+                  className="h-4 w-4"
+                  alt="GitHub"
+                />
                 <span className="sr-only">LinkedIn</span>
               </Button>
             </Link>

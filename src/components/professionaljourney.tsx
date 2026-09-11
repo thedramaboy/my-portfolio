@@ -3,24 +3,25 @@
 const experiences = [
   {
     period: "July 2025 - June 2026",
-    title: "Software developer (Intern)",
+    title: "Software Developer (Intern)",
     company: "GoApricot",
     location: "Calgary, AB",
     details: [
-      "Built responsive web apps and booking workflows using Next.js, React, and Supabase; improved usability and management efficiency.",
-      "Debugged production issues in .NET Core MVC; re-engineered pagination from page-based to query cursors for better performance.",
-      "Delivered features within Agile sprints, collaborating with designers and senior devs.",
+      "Primary developer on three client web applications, building React and Next.js interfaces end-to-end from requirements through REST API integration to production.",
+      "Built JR Plus, a pharmacy e-commerce admin dashboard with a full order and warehouse workflow, and BSH Drug, a drug information management system with Excel import/export and Supabase-backed file storage.",
+      "Worked on FlashYourMeme, a live ASP.NET Core MVC platform - debugged C# controller logic and re-engineered pagination from page-based to Firestore query cursors.",
+      "Worked in an Agile team with PR-based Git workflow and code reviews, owning features from scoping through to release.",
     ],
   },
   {
     period: "Sep 2025 - Present",
-    title: "Full-stack Developer (Remote)",
+    title: "Full-stack Developer (Freelance)",
     company: "Fastwork Thailand",
-    location: "Bangkok, TH",
+    location: "Remote",
     details: [
-      "Delivered high-quality features for TempJob (Outsource) by designing and implementing back-office modules using Next.js and Node.js (Express).",
-      "Applied Controller-Service-Model architecture to ensure maintainable and structured codebases for multi-platform integration (Web & Mobile).",
-      "Developed a React Native application, integrated Google Maps API, and managed the complete deployment pipeline to Google Play Console via EAS (Expo).",
+      "Maintained and extended TempJob, a production React Native (Expo) mobile app for temporary staffing, shipping bug fixes and new features to Google Play via EAS.",
+      "Built the back-office portal for job and worker management using Next.js and Node.js (Express), structured with a Controller-Service-Model architecture.",
+      "Integrated Google Maps API for location-based job browsing and implemented Supabase Auth with role-based access control across the platform.",
     ],
   },
   {
@@ -29,8 +30,8 @@ const experiences = [
     company: "GC Maintenance and Engineering Company Limited (GCME)",
     location: "Rayong, TH",
     details: [
-      "Created automated Power BI dashboards, reducing reporting time by 35%.",
-      "Analysed inspection data from high-risk equipment to prevent operational failures.",
+      "Built automated Power BI dashboards that cut manual reporting time by around 35%, converting raw inspection data into structured summaries for engineering teams.",
+      "Analysed inspection data from high-risk equipment to support decisions around maintenance and operational safety.",
     ],
   },
 ];

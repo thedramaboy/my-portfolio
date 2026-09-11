@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Github, Linkedin, Mail } from "lucide-react"
+import Image from 'next/image'
 
 export default function Contact() {
 
@@ -25,7 +25,13 @@ export default function Contact() {
                   href="mailto:ntwwork.ca@gmail.com"
                   className="inline-flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Mail className="h-5 w-5" />
+                  <Image
+                    src="/images/mail.png"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4"
+                    alt="GitHub"
+                  />
                   <span>ntwwork.ca@gmail.com</span>
                 </Link>
                 
@@ -34,7 +40,13 @@ export default function Contact() {
                   target="_blank"
                   className="inline-flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Github className="h-5 w-5" />
+                  <Image
+                    src="/images/github.png"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4"
+                    alt="GitHub"
+                  />
                   <span>GitHub</span>
                 </Link>
                 
@@ -43,7 +55,13 @@ export default function Contact() {
                   target="_blank"
                   className="inline-flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <Linkedin className="h-5 w-5" />
+                  <Image
+                    src="/images/linkedin.png"
+                    width={16}
+                    height={16}
+                    className="h-4 w-4"
+                    alt="GitHub"
+                  />
                   <span>LinkedIn</span>
                 </Link>
               </div>
