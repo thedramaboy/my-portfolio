@@ -3,10 +3,12 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getProjectBySlug, projects } from "@/lib/projects-data";
 import RequirementsSection from "@/components/project-detail/requirements-section";
+import DiagramSection from "@/components/project-detail/diagram-section";
 import DatabaseSection from "@/components/project-detail/database-section";
 import StackSection from "@/components/project-detail/stack-section";
 import ChallengesSection from "@/components/project-detail/challenges-section";
 import OutcomeSection from "@/components/project-detail/outcome-section";
+import ScreenshotsSection from "@/components/project-detail/screenshots-section";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -41,6 +43,23 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <p className="text-xs font-mono text-muted-foreground">{project.year}</p>
           <h1 className="text-4xl font-bold text-primary">{project.title}</h1>
           <p className="text-lg text-muted-foreground">{project.description}</p>
+          {project.demoUrl && (
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-mono text-primary underline underline-offset-4 hover:opacity-70 transition-opacity"
+              >
+                live demo →
+              </a>
+              {project.demoCredentials && (
+                <span className="text-xs font-mono text-muted-foreground/50">
+                  {project.demoCredentials}
+                </span>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Case study sections */}
@@ -48,8 +67,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           {project.requirements && (
             <RequirementsSection content={project.requirements} />
           )}
+          {project.architectureDiagram && (
+            <DiagramSection diagram={project.architectureDiagram} />
+          )}
           {project.databaseDesign && (
             <DatabaseSection content={project.databaseDesign} />
+          )}
+          {project.erdDiagram && (
+            <DiagramSection diagram={project.erdDiagram} />
           )}
           {project.stackRationale && (
             <StackSection
@@ -64,6 +89,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           {project.outcome && (
             <OutcomeSection content={project.outcome} />
           )}
+          <ScreenshotsSection images={project.images} />
         </div>
 
       </div>

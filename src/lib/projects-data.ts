@@ -6,6 +6,12 @@ export type Challenge = {
   result?: string;
 };
 
+export type Diagram = {
+  label: string;
+  src: string;
+  notes: string[];
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -14,9 +20,13 @@ export type Project = {
   level: 1 | 2 | 3;
   technologies: string[];
   images: string[];
+  demoUrl?: string;
+  demoCredentials?: string;
   // case study fields
   requirements?: string;
+  architectureDiagram?: Diagram;
   databaseDesign?: string;
+  erdDiagram?: Diagram;
   techStack?: Record<string, string[]>;
   stackRationale?: string;
   challenges?: Challenge[];
@@ -35,13 +45,42 @@ export const projects: Project[] = [
       Language: ["JavaScript"],
       Frontend: ["React", "Vite", "shadcn/ui", "MUI X DataGrid", "Zustand"],
       Backend: ["Node.js", "Express", "Prisma ORM", "JWT"],
-      Database: ["PostgreSQL"],
+      Database: ["PostgreSQL (Railway)"],
       Services: ["LINE Messaging API"],
       Infrastructure: ["Vercel", "Railway"],
     },
-    images: [],
+    images: [
+      "/projects/queuemein/queuemein1.png",
+      "/projects/queuemein/queuemein2.png",
+      "/projects/queuemein/queuemein3.png",
+      "/projects/queuemein/queuemein4.png",
+      "/projects/queuemein/queuemein5.png",
+      "/projects/queuemein/queuemein6.png",
+    ],
+    demoUrl: "https://clinic-sage-delta.vercel.app/",
+    demoCredentials: "admin@clinic.com / password123",
+    architectureDiagram: {
+      label: "Architecture diagram",
+      src: "/projects/queuemein/architecture.png",
+      notes: [
+        "The backend runs on Railway instead of Vercel because the cron job that sends LINE reminders needs to run continuously. Vercel is serverless and has an execution timeout, which means a scheduled job would get cut off before it finishes.",
+        "The cron job lives inside the same Express process rather than a separate worker service. The clinic sees around 70-90 patients per month, so the volume doesn't justify the added complexity of a separate queue or worker.",
+        "REST was chosen over GraphQL because the scope was clear and the team was just me. There was no over-fetching problem that would make GraphQL worth the setup.",
+      ],
+    },
     requirements:
       "A Thai aesthetic clinic with 3 branches was managing all bookings through Facebook messages, LINE OA, and phone calls with no central system. Staff had to check multiple platforms to know who was coming in, and patient records were scattered across spreadsheets and LINE chats. I gathered requirements through a structured questionnaire with the clinic owners, which covered their services and durations, how they scheduled doctors across branches, what patient data they needed to store, how they wanted notifications to work, and what reports they cared about. The outcome of that process shaped the whole data model.",
+    erdDiagram: {
+      label: "Entity relationship diagram",
+      src: "/projects/queuemein/erd.png",
+      notes: [
+        "Doctor and Branch are connected through a DoctorBranch junction table instead of a direct FK. The client said doctors work across multiple branches on different days - a direct FK would only allow one branch per doctor.",
+        "Schedule stores dayOfWeek (0-6) with start and end times instead of individual date entries. The clinic runs on a consistent weekly pattern, so generating available slots from a recurring schedule made more sense than maintaining a calendar of individual dates.",
+        "Booking has a rescheduledFrom field that points back to itself. This lets you trace the full chain of reschedules for any appointment - the client wanted to see where a booking originally came from.",
+        "Notification stores scheduledAt and sentAt as separate fields and logs any errors per attempt. The cron job uses scheduledAt to know what to send, and sentAt to confirm it was actually delivered. Failures get logged so they can be retried.",
+        "PendingLineUser exists as a holding state for LINE users who message the clinic before being registered as a patient. Without it, incoming LINE messages from unregistered contacts had nowhere to go.",
+      ],
+    },
     databaseDesign:
       "PostgreSQL via Supabase, managed with Prisma ORM. The core models are Branch, Doctor, DoctorBranch (a junction since doctors work across multiple branches), Schedule (recurring weekly slots per doctor per branch), Service (with duration in minutes), Patient, Booking, and Notification. A few design decisions worth noting: Schedule uses a dayOfWeek integer with start and end time strings rather than storing individual date slots - the clinic runs on a consistent weekly pattern so generating available slots from a recurring schedule made more sense than maintaining a calendar of individual entries. Booking has a self-referencing rescheduledFrom field so you can trace the full chain of reschedules for any appointment. Notification stores scheduledAt and sentAt separately and logs errors per attempt, which supports the hourly cron job retrying failed LINE messages. There's also a PendingLineUser model for LINE webhook users who interact before a staff member has linked them to a patient record.",
     stackRationale:
@@ -92,6 +131,15 @@ export const projects: Project[] = [
     ],
     requirements:
       "This was an admin dashboard for a Thai pharmacy distributor. My scope was three sections: Overview (KPI cards and 30-day revenue/order charts), Order management (the full workflow from payment verification through warehouse picking and packing to shipping), and Product management (with per-lot pricing and expiry tracking). The order side especially had a lot of moving parts - the client wanted to know exactly who changed what and when at every step.",
+    erdDiagram: {
+      label: "Entity relationship diagram",
+      src: "/projects/jr/erd.png",
+      notes: [
+        "Payment status lives on payment_groups, not on orders directly. Orders connect to a payment group through the payment_group_orders junction table. I only found this after my status updates weren't sticking - I was writing to the wrong table.",
+        "shipping_status_history records every status change with a changed_by name and an optional note. The client wanted a full audit trail so they could see exactly who updated an order and when.",
+        "product_batches saves using delete-all then re-insert on every save. Since batch_number (1, 2, or 3) is the only identifier and nothing else references batches by row ID, it's safe to wipe and rewrite. This kept the save logic simple without needing to diff old and new state.",
+      ],
+    },
     databaseDesign:
       "The database was PostgreSQL through Supabase. Most of the read-heavy pages pulled from pre-built views rather than raw tables - v_stats_card for the KPI overview, v_orders for the paginated order list, v_order_details for the order detail page, and v_product_details for the product list with thumbnail data. On the write side, one thing that caught me off guard was that payment status lives on payment_groups, not on orders directly. A separate payment_group_orders junction table ties a payment group to its orders. Shipping status has its own table (order_shipments), and every change gets logged to order_shipping_history with who made it and an optional note. Products support up to 3 lots via product_batches, each with independent quantity, cost, sale price, and expiry date. Per-item warehouse picks are tracked in order_item_picks with picked_by, picked_at, and a verified_quantity field.",
     stackRationale:
@@ -140,6 +188,16 @@ export const projects: Project[] = [
     ],
     requirements:
       "A Thai pharmacy needed an admin panel to manage the drug information that powers their companion mobile app. The main things they needed: organize drugs into color-coded categories, attach images and PDFs to each drug, add structured detail sections (like dosage, indications, side effects), and let admins control the app's theme images and app config. They also needed to manage the informed consent document that users see in the app, and view each user's profile alongside the in-app survey responses they had filled in. Exporting all of that user and survey data to Excel was part of the scope too. On top of that, they had hundreds of existing drug records sitting in Excel spreadsheets that they wanted to bulk import, and needed to export back out in the same format.",
+    erdDiagram: {
+      label: "Entity relationship diagram",
+      src: "/projects/bsh/erd.png",
+      notes: [
+        "drug_attachments stores both images and PDFs in the same table. Both are just files attached to a drug with the same structure - url, filename, and order_index. The type column tells them apart. This avoided duplicating the same structure into two separate tables.",
+        "data_version exists so the mobile app knows when to refresh its local cache. Without it, the app would either re-fetch everything on every load or never pick up drug data changes made in the admin panel.",
+        "app_config is always a single row with id set to 'default', managed through upsert. There's only ever one set of app settings, so a multi-row table didn't make sense.",
+        "consents uses a unique version integer so the system can tell exactly which version of the consent document each user has accepted.",
+      ],
+    },
     databaseDesign:
       "I used PostgreSQL through Supabase. The core tables were categories, drugs (linked to a category), drug_attachments (covering both images and PDFs with an order_index so the main image is always first), and drug_details (key-value sections per drug with their own ordering). I also set up a consents table to version the informed consent document, and a user_survey table that stored responses to a 5-category in-app questionnaire (usability, accuracy, efficiency, satisfaction, impact). A data_version table handled mobile app cache invalidation so the app knows to refresh when drug data changes. For the Excel export I created a database view called export_details that pre-joined all the drug data so the export API route just maps rows to columns without doing any joins in code. Files went into Supabase Storage, split into separate buckets for drug assets and theme images.",
     stackRationale:
