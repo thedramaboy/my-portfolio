@@ -1,7 +1,7 @@
 const SKILL_GROUPS = [
   {
     category: "Languages",
-    skills: ["JavaScript", "TypeScript", "HTML", "CSS", "SQL"],
+    skills: ["JavaScript", "TypeScript", "C#", "HTML", "CSS", "SQL"],
   },
   {
     category: "Frontend",

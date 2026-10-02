@@ -20,7 +20,7 @@ export default function DiagramSection({ diagram }: Props) {
         <ul className="space-y-2">
           {diagram.notes.map((note, i) => (
             <li key={i} className="flex gap-3 text-sm text-muted-foreground leading-relaxed">
-              <span className="font-mono text-muted-foreground/40 shrink-0">—</span>
+              <span className="font-mono text-muted-foreground/40 shrink-0">-</span>
               <span>{note}</span>
             </li>
           ))}

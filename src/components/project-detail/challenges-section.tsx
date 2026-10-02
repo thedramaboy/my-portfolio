@@ -11,7 +11,7 @@ export default function ChallengesSection({ challenges }: Props) {
           <div key={i} className="border border-border rounded-sm p-5 space-y-4">
             <p className="text-sm font-medium">
               <span className="font-mono text-muted-foreground/40 mr-2">
-                {String(i + 1).padStart(2, "0")} —
+                {String(i + 1).padStart(2, "0")} -
               </span>
               {item.title}
             </p>

@@ -10,7 +10,7 @@ export default function Contact() {
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-2xl font-bold mb-4 text-primary">I would love to hear anything from you</h2>
         <p className="text-base text-muted-foreground mb-10">
-          Now seeking a junior software developer or an internship opportunity for 2026!
+          Now seeking a junior software developer role in Thailand, available from December 2026.
         </p>
 
         <div>

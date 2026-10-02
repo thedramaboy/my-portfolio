@@ -82,7 +82,7 @@ export const projects: Project[] = [
       ],
     },
     databaseDesign:
-      "PostgreSQL via Supabase, managed with Prisma ORM. The core models are Branch, Doctor, DoctorBranch (a junction since doctors work across multiple branches), Schedule (recurring weekly slots per doctor per branch), Service (with duration in minutes), Patient, Booking, and Notification. A few design decisions worth noting: Schedule uses a dayOfWeek integer with start and end time strings rather than storing individual date slots - the clinic runs on a consistent weekly pattern so generating available slots from a recurring schedule made more sense than maintaining a calendar of individual entries. Booking has a self-referencing rescheduledFrom field so you can trace the full chain of reschedules for any appointment. Notification stores scheduledAt and sentAt separately and logs errors per attempt, which supports the hourly cron job retrying failed LINE messages. There's also a PendingLineUser model for LINE webhook users who interact before a staff member has linked them to a patient record.",
+      "PostgreSQL hosted on Railway, managed with Prisma ORM. The core models are Branch, Doctor, DoctorBranch (a junction since doctors work across multiple branches), Schedule (recurring weekly slots per doctor per branch), Service (with duration in minutes), Patient, Booking, and Notification. A few design decisions worth noting: Schedule uses a dayOfWeek integer with start and end time strings rather than storing individual date slots - the clinic runs on a consistent weekly pattern so generating available slots from a recurring schedule made more sense than maintaining a calendar of individual entries. Booking has a self-referencing rescheduledFrom field so you can trace the full chain of reschedules for any appointment. Notification stores scheduledAt and sentAt separately and logs errors per attempt, which supports the hourly cron job retrying failed LINE messages. There's also a PendingLineUser model for LINE webhook users who interact before a staff member has linked them to a patient record.",
     stackRationale:
       "React + Vite for the frontend - a fast SPA was the right fit since this is a staff-facing tool, not a public-facing site. MUI X DataGrid handled the sortable, paginated tables across most pages, and shadcn/ui covered forms and dialogs. Zustand managed auth state. On the backend, Express with Prisma in a Controller-Service-Router structure, with Zod schemas for request validation at the route layer. LINE Messaging API ran on an hourly cron job for appointment reminders - the clinic specifically wanted a day-before evening notification and a morning-of reminder at 8 AM. Railway for the backend since it needs to stay always-on for the cron, Vercel for the frontend.",
     challenges: [
@@ -108,13 +108,13 @@ export const projects: Project[] = [
       },
     ],
     outcome:
-      "Deployed on Vercel and Railway, currently piloted with the clinic. The system replaced a workflow that was spread across Facebook, LINE, phone calls, and spreadsheets with one place to manage bookings, patient records, doctor schedules, and LINE notifications. What shipped: multi-branch booking management, doctor scheduling, patient records with LINE integration, automated reminders via cron, a reports page with new vs returning patient breakdown, three-role access control, and 16 unit tests on the controller logic.",
+      "Deployed on Vercel and Railway, currently piloted with the clinic. The system replaced a workflow that was spread across Facebook, LINE, phone calls, and spreadsheets with one place to manage bookings, patient records, doctor schedules, and LINE notifications. What shipped: multi-branch booking management, doctor scheduling, patient records with LINE integration, automated reminders via cron, a reports page with new vs returning patient breakdown, and three-role access control.",
   },
   {
     slug: "jr-plus",
     title: "JR Plus",
     description: "Pharmacy e-commerce dashboard with order and warehouse workflow",
-    year: "2025",
+    year: "2025-2026",
     level: 3,
     technologies: ["Next.js", "TypeScript", "Supabase", "TanStack Query", "Zustand", "Recharts", "Tailwind CSS"],
     techStack: {
@@ -141,7 +141,7 @@ export const projects: Project[] = [
       ],
     },
     databaseDesign:
-      "The database was PostgreSQL through Supabase. Most of the read-heavy pages pulled from pre-built views rather than raw tables - v_stats_card for the KPI overview, v_orders for the paginated order list, v_order_details for the order detail page, and v_product_details for the product list with thumbnail data. On the write side, one thing that caught me off guard was that payment status lives on payment_groups, not on orders directly. A separate payment_group_orders junction table ties a payment group to its orders. Shipping status has its own table (order_shipments), and every change gets logged to order_shipping_history with who made it and an optional note. Products support up to 3 lots via product_batches, each with independent quantity, cost, sale price, and expiry date. Per-item warehouse picks are tracked in order_item_picks with picked_by, picked_at, and a verified_quantity field.",
+      "The database was PostgreSQL through Supabase. Most of the read-heavy pages pulled from pre-built views rather than raw tables - v_stats_card for the KPI overview, v_orders for the paginated order list, v_order_details for the order detail page, and v_product_details for the product list with thumbnail data. On the write side, one thing that caught me off guard was that payment status lives on payment_groups, not on orders directly. A separate payment_group_orders junction table ties a payment group to its orders. Shipping status has its own table (order_shipments), and every change gets logged to order_shipping_history with who made it and an optional note. Products support up to 3 lots via product_batches, each with independent quantity, cost, sale price, and expiry date. Per-item warehouse picks are tracked in order_item_picks with picked_by, picked_at, and a verified_quantity field. Order statuses also arrived as free text, so I added a normalization layer that maps 30+ free-text status values to 5 canonical states for consistent reporting.",
     stackRationale:
       "TanStack Query was the right call here because the order detail page needed several data sources in parallel and cache invalidation needed to be tight - updating an order status should immediately refresh all the related views. Supabase gave me auth, Postgres, and storage without needing a separate backend. Recharts handled the line charts on the overview page.",
     challenges: [
@@ -199,7 +199,7 @@ export const projects: Project[] = [
       ],
     },
     databaseDesign:
-      "I used PostgreSQL through Supabase. The core tables were categories, drugs (linked to a category), drug_attachments (covering both images and PDFs with an order_index so the main image is always first), and drug_details (key-value sections per drug with their own ordering). I also set up a consents table to version the informed consent document, and a user_survey table that stored responses to a 5-category in-app questionnaire (usability, accuracy, efficiency, satisfaction, impact). A data_version table handled mobile app cache invalidation so the app knows to refresh when drug data changes. For the Excel export I created a database view called export_details that pre-joined all the drug data so the export API route just maps rows to columns without doing any joins in code. Files went into Supabase Storage, split into separate buckets for drug assets and theme images.",
+      "The database and backend functions were handled by a senior developer on the project, and I built the frontend and the import/export features against them. It is PostgreSQL through Supabase. The core tables were categories, drugs (linked to a category), drug_attachments (covering both images and PDFs with an order_index so the main image is always first), and drug_details (key-value sections per drug with their own ordering). There is also a consents table to version the informed consent document, and a user_survey table that stored responses to a 5-category in-app questionnaire (usability, accuracy, efficiency, satisfaction, impact). A data_version table handled mobile app cache invalidation so the app knows to refresh when drug data changes. For the Excel export, a database view called export_details pre-joins all the drug data so the export API route just maps rows to columns without doing any joins in code. Files went into Supabase Storage, split into separate buckets for drug assets and theme images.",
     stackRationale:
       "Supabase was a good fit here - auth, storage, and database all in one place for what was essentially an internal tool. The xlsx library handled both reading uploaded Excel files and generating the export. For the category color picker I used react-colorful since it's lightweight and easy to wire into a controlled input.",
     challenges: [
@@ -229,8 +229,8 @@ export const projects: Project[] = [
   {
     slug: "tempjob",
     title: "TempJob",
-    description: "Freelance engagement on a live Thai job-seeking platform - infrastructure rescue, bug fixes, and 15-feature delivery",
-    year: "2025",
+    description: "Freelance engagement on a live Thai job-seeking platform - infrastructure rescue, bug fixes, and 14-feature delivery",
+    year: "2025-2026",
     level: 2,
     technologies: ["React Native (Expo)", "Next.js", "Node.js (Express)", "Supabase", "Google Maps Static API", "EAS", "Google Cloud Console"],
     techStack: {

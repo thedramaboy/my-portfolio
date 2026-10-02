@@ -7,21 +7,21 @@ const experiences = [
     company: "GoApricot",
     location: "Calgary, AB",
     details: [
-      "Primary developer on three client web applications, building React and Next.js interfaces end-to-end from requirements through REST API integration to production.",
+      "Built the front end for two client web applications and contributed to a third, working in React and Next.js from requirements through REST API integration.",
       "Built JR Plus, a pharmacy e-commerce admin dashboard with a full order and warehouse workflow, and BSH Drug, a drug information management system with Excel import/export and Supabase-backed file storage.",
       "Worked on FlashYourMeme, a live ASP.NET Core MVC platform - debugged C# controller logic and re-engineered pagination from page-based to Firestore query cursors.",
       "Worked in an Agile team with PR-based Git workflow and code reviews, owning features from scoping through to release.",
     ],
   },
   {
-    period: "Sep 2025 - Present",
+    period: "Oct 2025 - Present",
     title: "Full-stack Developer (Freelance)",
-    company: "Fastwork Thailand",
+    company: "Freelance (via Fastwork)",
     location: "Remote",
     details: [
-      "Maintained and extended TempJob, a production React Native (Expo) mobile app for temporary staffing, shipping bug fixes and new features to Google Play via EAS.",
-      "Built the back-office portal for job and worker management using Next.js and Node.js (Express), structured with a Controller-Service-Model architecture.",
-      "Integrated Google Maps API for location-based job browsing and implemented Supabase Auth with role-based access control across the platform.",
+      "Took over TempJob, a live React Native (Expo) job app for temporary staffing, and its Next.js employer portal after the previous developer left, migrating it to the client's own Play Console, Google Cloud, and EAS accounts.",
+      "Delivered 14 client-requested features across the mobile app and web portal, added Google Sign-In and a Google Maps location preview, and fixed a backend key mismatch and a cascade-delete bug.",
+      "Shipped releases to Google Play via EAS. The backend follows a Controller-Service-Model structure.",
     ],
   },
   {
