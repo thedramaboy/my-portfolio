@@ -9,7 +9,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Nate's Portfolio",
+  title: "Natthawat's Portfolio",
   description: "Junior software developer.",
   icons: {
     icon: "/favicon.ico",

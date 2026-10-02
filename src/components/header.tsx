@@ -38,7 +38,7 @@ export default function Header() {
         </nav>
 
         <Button variant="secondary" className="text-primary" asChild>
-          <a href="/resume/resume_nate.pdf" download>
+          <a href="/resume/resume_natthawat.pdf" download>
             Resume
           </a>
         </Button>
