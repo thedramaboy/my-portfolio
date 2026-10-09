@@ -11,12 +11,12 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto px-6 w-full text-left flex flex-col justify-center">
           <div className="flex items-center gap-4 mb-4">
             <h1 className="text-2xl font-semibold text-primary tracking-wider sm:text-7xl lg:text-8xl">
-              Natthawat Se.
+              Nate Se.
             </h1>
             <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-28 lg:h-28 overflow-hidden">
               <Image
                 src="/images/avatar.png"
-                alt="Natthawat Se. Avatar"
+                alt="Nate Se. Avatar"
                 fill
                 className="object-cover"
                 priority
@@ -25,7 +25,7 @@ export default function Hero() {
           </div>
 
           <p className="text-lg text-primary">
-            👋 Hi! I&apos;m Natthawat, a graduate from SAIT in Software
+            👋 Hi! I&apos;m Nate, a graduate from SAIT in Software
             development.
             <br />
             I&apos;m still in the early stages of my career path with a long way
