@@ -31,7 +31,7 @@ const experiences = [
     location: "Rayong, TH",
     details: [
       "Built automated Power BI dashboards that cut manual reporting time by around 35%, converting raw inspection data into structured summaries for engineering teams.",
-      "Analysed inspection data from high-risk equipment to support decisions around maintenance and operational safety.",
+      "Performed visual inspections of plant equipment and analysed inspection data from high-risk equipment to support decisions around maintenance and operational safety.",
     ],
   },
 ];

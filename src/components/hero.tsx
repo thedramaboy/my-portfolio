@@ -32,7 +32,7 @@ export default function Hero() {
             to go and so much to learn.
             <br />
             <br />
-            Now I&apos;m currently looking for a junior software developer role in Thailand.
+            Now I&apos;m currently open for opportunities as a junior software developer.
           </p>
 
           <div className="space-x-4 py-6">
